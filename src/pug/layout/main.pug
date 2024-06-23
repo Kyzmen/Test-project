@@ -1,0 +1,60 @@
+include ../includes/mixins.pug
+-
+  var pagesLink = [
+  {
+  home: '/',
+  characteristics: './characteristics.html',
+  contacts: './contacts.html',
+  terrace: './terrace.html'
+  }
+  ];
+block variable
+doctype html
+html(lang="uk" data-mode="local")
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    //- Edge и ряд мобильных браузеров слишком умны. Отключим это.
+    
+    meta(name='format-detection', content='telephone=no')
+    meta(name='format-detection', content='date=no')
+    meta(name='format-detection', content='address=no')
+    meta(name='format-detection', content='email=no')
+    meta(content='notranslate', name='google')
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg" color="#c18880">
+    <meta name="msapplication-TileColor" content="#c18880">
+    <meta name="theme-color" content="#ffffff">
+    block meta
+    block head
+
+  body(class= class_page id= id_page)
+    // START SVG SPRITE
+    include ../../assets/svg-sprite/sprite/symbol_sprite.php
+    // END SVG SPRITE
+    // START POPUP MODAL
+    include ../includes/popup.pug
+    // END POPUP MODAL
+    // START MENU
+    include ../includes/menu.pug
+    // END MENU
+    .toast-wrapper(data-toast-wrapper)
+    // START HEADER
+    block header
+    // END HEADER
+    //- .page__inner
+    //-   .page__content
+    .scroller-container
+      block content
+
+      //.page__footer-wrapper
+        // START FOOTER
+      block footer
+        // END FOOTER
+      // START LOADER
+    include ../includes/loader.pug
+    // END LOADER
+    block scripts

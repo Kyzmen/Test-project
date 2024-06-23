@@ -1,0 +1,69 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Комерційна нерухомість'
+    var id_page = 'id-page-commercial'
+    var class_page = 'class-page-commercial'
+    var breadcrumbsSubitem = [
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/index-app.bundle.js')
+  script(defer src='./assets/scripts/commercial.bundle.js')
+block content
+  +InnerPageFront(title_page, 'some', './assets/images/commercial/front.jpg')
+  .container.commercial-container
+    .block-img-text.row-plain
+      .block-img-text__text
+        .commercial-subtitle У Central Park Vinnytsia є все необхідне не лише для життя, а й для бізнесу.
+        p.commercial-text Район передбачає не тільки комерційні та офісні площі, де можна реалізувати будь-які бізнес-ідеї, а й супутню інфраструктуру: відділення пошти, сервісні об'єкти, ресторан для бізнес-ланчу або ділового обіду з колегами чи бізнес-партнерами, затишні зони відпочинку, фінансові та юридичні установи для максимально комфортних умов роботи.
+      .block-img-text__img-wrap 
+        .block-img-text__img 
+          img(src='./assets/images/commercial/277900885.jpg')
+    .block-img-text.row-plain
+      .block-img-text__img-wrap 
+        <svg class="block-img-text__decor" width="207" height="384" viewBox="0 0 207 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.6">
+          <path d="M39.7027 37.0454H0V352.563H39.7027V37.0454Z" fill="url(#paint0_linear_1580_4855)"/>
+          <path d="M95.4117 0H55.709V383.859H95.4117V0Z" fill="url(#paint1_linear_1580_4855)"/>
+          <path d="M151.126 0H111.424V383.859H151.126V0Z" fill="url(#paint2_linear_1580_4855)"/>
+          <path d="M206.839 37.0459H167.137V352.564H206.839V37.0459Z" fill="url(#paint3_linear_1580_4855)"/>
+          </g>
+          <defs>
+          <linearGradient id="paint0_linear_1580_4855" x1="19.8513" y1="37.0454" x2="19.8513" y2="352.563" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#445163"/>
+          <stop offset="1" stop-color="#445163" stop-opacity="0.05"/>
+          </linearGradient>
+          <linearGradient id="paint1_linear_1580_4855" x1="75.5603" y1="0" x2="75.5603" y2="383.859" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#445163"/>
+          <stop offset="1" stop-color="#445163" stop-opacity="0.05"/>
+          </linearGradient>
+          <linearGradient id="paint2_linear_1580_4855" x1="131.275" y1="0" x2="131.275" y2="383.859" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#445163"/>
+          <stop offset="1" stop-color="#445163" stop-opacity="0.05"/>
+          </linearGradient>
+          <linearGradient id="paint3_linear_1580_4855" x1="186.988" y1="37.0459" x2="186.988" y2="352.564" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#445163"/>
+          <stop offset="1" stop-color="#445163" stop-opacity="0.05"/>
+          </linearGradient>
+          </defs>
+          </svg>
+        .block-img-text__img 
+          img(src='./assets/images/commercial/277900885-1.jpg')
+      .block-img-text__text
+        .commercial-subtitle Для резидентів та відвідувачів передбачені багаторівневий підземний та гостьовий паркінги.
+        p.commercial-text Сучасна людина найбільше цінує свій час, тому в Central Park Vinnytsia буде можливо жити і працювати в межах комплексу, що органічно вписується в концепцію комплексу LIVE. WORK. REST. - ЖИВИ. ПРАЦЮЙ. ВІДПОЧИВАЙ.
+        a.button.with-hover.mt-medium(href="infrastructure")
+          .button__hover
+          span Дізнатися більше
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

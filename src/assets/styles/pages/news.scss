@@ -1,0 +1,104 @@
+div.news {
+    @include row-flex();
+    background-color: var(--color-black);
+    justify-content: space-around;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    --v-padding: 100px;
+    padding-top: var(--v-padding);
+    padding-bottom: var(--v-padding);
+    @include to(575px){
+        
+        --v-padding: 70px;
+    }
+    .news-card {
+        @include size(9);
+        @include shift(0);
+        @include to(1680px){
+            
+            @include size(10);
+        }
+        @include to(1025px){
+            @include size(20);
+        }
+        @include to(575px){
+            @include size(24);
+        }
+    }
+
+    .news-card {
+        margin-bottom: 100px;
+        @include to(1024px){
+            margin-bottom: 50px;
+
+        }
+        @include to(575px){
+        }
+    }
+    :not(.header) .button {
+        margin: 0 10vw;
+    }
+}
+
+.news-card {
+    --inner-padding: 50px;
+    border: 1px solid #4A4647;
+    text-decoration: none;
+    @include to(1680px){
+        --inner-padding: 30px;
+    }
+    @include to(575px){
+        
+        --inner-padding: 20px;
+    }
+    &__img {
+        position: relative;
+        padding-bottom: 56.25%;
+        margin-bottom: var(--inner-padding);
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1);
+            transition: .3s ease-in-out;
+        }
+        
+    }
+    @include from(1025px){ 
+        &:hover &__img img {
+            filter: grayscale(0);
+        }
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 140%;
+        /* or 34px */
+        letter-spacing: -0.03em;
+        color: var(--color-white);
+        padding-left: var(--inner-padding);
+        padding-right: var(--inner-padding);
+        margin-bottom: 30px;
+        @include to(1680px){
+            font-size: 18px;
+        }
+        @include to(575px){
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+    }
+    &__subtitle {
+        font-size: 14px;
+        line-height: 140%;
+        padding-left: var(--inner-padding);
+        padding-right: var(--inner-padding);
+        /* identical to box height, or 20px */
+        color: #5D5755;
+        margin-bottom: var(--inner-padding);
+        @include to(575px){
+            font-size: 12px;
+        }
+    }
+}

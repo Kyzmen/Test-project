@@ -1,0 +1,136 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Переваги'
+    var id_page = 'id-page-advantages'
+    var class_page = 'class-page-advantages'
+    var breadcrumbsSubitem = [
+    ];
+    var sliders = [
+      {img: './assets/images/advantages/2.jpg', text: 'власний дитячий садок', subtext: 'Формат життя в стилі LIVE. WORK. REST. - ЖИВИ. ПРАЦЮЙ. ВІДПОЧИВАЙ.'},
+      {img: './assets/images/advantages/1.jpg'  , text: 'власна школа', subtext: 'Формат життя в стилі LIVE. WORK. REST. - ЖИВИ. ПРАЦЮЙ. ВІДПОЧИВАЙ.'},
+      {img: './assets/images/advantages/3.jpg'             , text: 'гуртки та секції для розвитку', subtext: 'Формат життя в стилі LIVE. WORK. REST. - ЖИВИ. ПРАЦЮЙ. ВІДПОЧИВАЙ.'},
+      {img: './assets/images/advantages/4.jpg', text: 'поліклініка', subtext: 'Формат життя в стилі LIVE. WORK. REST. - ЖИВИ. ПРАЦЮЙ. ВІДПОЧИВАЙ.'},
+    {img: './assets/images/advantages/5.jpg', text: 'великий супермаркет', subtext: 'Формат життя в стилі LIVE. WORK. REST. - ЖИВИ. ПРАЦЮЙ. ВІДПОЧИВАЙ.'},
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/index-app.bundle.js')
+  script(defer src='./assets/scripts/advantages.bundle.js')
+block content
+  +InnerPageFront(title_page, 'some', './assets/images/advantages/front.jpg')
+  .container.adv-slider-container.adv-slider
+    .adv-slider-container__text
+      .adv-subtitle  В Central Park Vinnytsia, Ви купуєте не просто квартиру
+      p.adv-dark-text Ви отримуєте можливості користуватися величезною кількістю переваг, розташованих за межами своєї квартири, всією інфраструктурою на території комплексу: 
+    .adv-slider-container__nav
+      div(data-screen3-prev)
+        <svg class="bordered-circle" data-circle-with-hover width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle data-circle-with-hover-default cx="40" cy="40" r="39.5" />
+          <circle data-circle-with-hover-hover cx="40" cy="40" r="39.5" />
+          <path d="M35.1896 32C33.7584 34.1224 28.3358 40 27 40M27 40C28.3517 40 33.5994 45.4694 35.1896 48M27 40L53 40"/>
+          </svg>
+      div(data-screen3-next)
+        <svg class="bordered-circle" data-circle-with-hover width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle data-circle-with-hover-default cx="40" cy="40" r="39.5" />
+          <circle data-circle-with-hover-hover cx="40" cy="40" r="39.5" />
+          <path d="M44.8104 32C46.2416 34.1224 51.6642 40 53 40M53 40C51.6483 40 46.4006 45.4694 44.8104 48M53 40L27 40"/>
+          </svg>
+    .zoom-slider-wrapper
+      .swiper-wrapper
+        each val in sliders
+          .swiper-slide
+            img(src=val.img)
+            p #{val.text}
+  .advantages-points-mobile
+    .adv-mob-part
+      .adv-mob-part__title.advantages-mob-title Заголовок блоку
+      .adv-mob-part__text Дитячі та спортивні майданчики, лаунж-зони, фонтанна площа дозволять відпочити всією сім'єю із задоволенням та з користю для здоров'я. Внутрішня територія вільна від машин, є місця для зберігання велосипедів та колясочні кімнати. 
+    each val in sliders
+      .advantage-mob-point
+        .advantage-mob-point__text-wrap
+          .advantage-mob-point__title.advantages-mob-title #{val.text}
+          .advantage-mob-point__text #{val.subtext}
+        img.advantage-mob-point__img(src=val.img)
+  .container.adv-container.adv-container__desktop 
+    .block-img-text
+      .block-img-text__text
+        p Дитячі та спортивні майданчики, лаунж-зони, фонтанна площа дозволять відпочити всією сім'єю із задоволенням та з користю для здоров'я. Внутрішня територія вільна від машин, є місця для зберігання велосипедів та колясочні кімнати.
+      .block-img-text__img-wrap 
+        .block-img-text__img 
+          img(src='./assets/images/advantages/277900885.jpg')
+    .block-img-text
+      .block-img-text__text
+        p Cпорткомплекс з 25-метровим басейном – ідеальний варіант для тих, хто хоче тримати себе у формі та при цьому не витрачати час на дорогу у фітнес зал.
+      .block-img-text__img-wrap 
+        .block-img-text__img 
+          img(src='./assets/images/advantages/277900885-1.jpg')
+    .adv-wide-block
+      img.adv-wide-block__img(src="./assets/images/advantages/wide.jpg")
+      <svg class="adv-wide-block__decor" width="207" height="384" viewBox="0 0 207 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.6">
+        <path d="M39.7027 37.0457H0V352.563H39.7027V37.0457Z" fill="url(#paint0_linear_114_4238)"/>
+        <path d="M95.4136 0H55.7109V383.859H95.4136V0Z" fill="url(#paint1_linear_114_4238)"/>
+        <path d="M151.128 0H111.426V383.859H151.128V0Z" fill="url(#paint2_linear_114_4238)"/>
+        <path d="M206.839 37.0457H167.137V352.563H206.839V37.0457Z" fill="url(#paint3_linear_114_4238)"/>
+        </g>
+        <defs>
+        <linearGradient id="paint0_linear_114_4238" x1="19.8513" y1="37.0457" x2="19.8513" y2="352.563" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#445163"/>
+        <stop offset="1" stop-color="#445163" stop-opacity="0.05"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_114_4238" x1="75.5623" y1="0" x2="75.5623" y2="383.859" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#445163"/>
+        <stop offset="1" stop-color="#445163" stop-opacity="0.05"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_114_4238" x1="131.277" y1="0" x2="131.277" y2="383.859" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#445163"/>
+        <stop offset="1" stop-color="#445163" stop-opacity="0.05"/>
+        </linearGradient>
+        <linearGradient id="paint3_linear_114_4238" x1="186.988" y1="37.0457" x2="186.988" y2="352.563" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#445163"/>
+        <stop offset="1" stop-color="#445163" stop-opacity="0.05"/>
+        </linearGradient>
+        </defs>
+        </svg>
+    .adv-dark-text Розслабитися в салоні краси або на масажі, в сауні чи хаммамі, випити чашку запашної кави або ароматного чаю у затишному кафе, пообідати у колі друзів чи влаштувати романтичну вечерю в улюбленому ресторанчику - власна інфраструктура комплексу пропонує все необхідне для потреб кожної людини.
+    .block-img-text.row-plain
+      .block-img-text__text
+        p Формат життя в стилі LIVE. WORK. REST. - ЖИВИ. ПРАЦЮЙ. ВІДПОЧИВАЙ. дозволяє по-новому влаштувати свій побут, економлячи час і сили на те, що дійсно важливо та цікаво!
+        a.button.with-hover.mt-medium(href="infrastructure")
+          .button__hover
+          span Інфраструктура
+      .block-img-text__img-wrap 
+        .block-img-text__img 
+          img(src='./assets/images/advantages/277900885-2.jpg')
+  .container.adv-container.adv-container__mobile
+    .adv-mob-part 
+      .adv-mob-part__title.advantages-mob-title Заголовок блоку
+      .adv-mob-part__text Дитячі та спортивні майданчики, лаунж-зони, фонтанна площа дозволять відпочити всією сім'єю із задоволенням та з користю для здоров'я. Внутрішня територія вільна від машин, є місця для зберігання велосипедів та колясочні кімнати. 
+    .advantage-mob-point
+      .advantage-mob-point__text-wrap
+        .advantage-mob-point__text.advantage-mob-point__text--white.advantage-mob-point__text--uppercased Cпорткомплекс з 25-метровим басейном – ідеальний варіант для тих, хто хоче тримати себе у формі та при цьому не витрачати час на дорогу у фітнес зал. 
+      img(src='./assets/images/advantages/277900885-1.jpg').advantage-mob-point__img
+    .adv-mob-part 
+      .adv-mob-part__title.advantages-mob-title Заголовок блоку
+      .adv-mob-part__text Дитячі та спортивні майданчики, лаунж-зони, фонтанна площа дозволять відпочити всією сім'єю із задоволенням та з користю для здоров'я. Внутрішня територія вільна від машин, є місця для зберігання велосипедів та колясочні кімнати. 
+      img(src="./assets/images/advantages/mob/inner-yard.jpg").adv-mob-part__img
+    .adv-mob-part 
+      .adv-mob-part__title.advantages-mob-title Заголовок блоку
+      .adv-mob-part__text Дитячі та спортивні майданчики, лаунж-зони, фонтанна площа дозволять відпочити всією сім'єю із задоволенням та з користю для здоров'я. Внутрішня територія вільна від машин, є місця для зберігання велосипедів та колясочні кімнати. 
+    a(href="infrastructure" class="button button--small with-hover")
+      .button__hover
+      span Інфраструктура
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

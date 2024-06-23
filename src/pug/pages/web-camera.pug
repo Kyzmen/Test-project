@@ -1,0 +1,76 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Веб камера'
+    var id_page = 'id-page-web-camera'
+    var class_page = 'class-page-web-camera'
+    var breadcrumbsSubitem = [
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/index-app.bundle.js')
+  script(defer src='./assets/scripts/web-camera.bundle.js')
+block content
+  +InnerPageFront(title_page, 'some', './assets/images/web-camera/front.jpg')
+  .container.web-container
+    .web-item 
+      <svg data-circle-with-hover class="web-item__play-button" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle data-circle-with-hover-default cx="50" cy="50" r="50" style="fill:#23242B"/>
+        <circle data-circle-with-hover-hover cx="50" cy="50" r="50" fill="#23242B"/>
+        <path d="M60.8284 50.4859L46.9055 60.232C46.2427 60.6959 45.332 60.2217 45.332 59.4127L45.332 39.9207C45.332 39.1117 46.2427 38.6375 46.9055 39.1015L60.8284 48.8475C61.3971 49.2456 61.3971 50.0878 60.8284 50.4859Z" fill="#E5CDB7"/>
+        </svg>
+      .web-item__frame
+        img(src="./assets/images/test-build.jpg").web-item__frame-preview
+        iframe(data-src="https://www.youtube.com/embed/DAlzlebbdPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+      .web-item__title Камера 5
+    .web-item 
+      <svg data-circle-with-hover class="web-item__play-button" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle data-circle-with-hover-default cx="50" cy="50" r="50" style="fill:#23242B"/>
+        <circle data-circle-with-hover-hover cx="50" cy="50" r="50" fill="#23242B"/>
+        <path d="M60.8284 50.4859L46.9055 60.232C46.2427 60.6959 45.332 60.2217 45.332 59.4127L45.332 39.9207C45.332 39.1117 46.2427 38.6375 46.9055 39.1015L60.8284 48.8475C61.3971 49.2456 61.3971 50.0878 60.8284 50.4859Z" fill="#E5CDB7"/>
+        </svg>
+      .web-item__frame
+        img(src="./assets/images/test-build.jpg").web-item__frame-preview
+        iframe(data-src="https://www.youtube.com/embed/DAlzlebbdPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+      .web-item__title Камера 5
+    .web-item 
+      <svg data-circle-with-hover class="web-item__play-button" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle data-circle-with-hover-default cx="50" cy="50" r="50" style="fill:#23242B"/>
+        <circle data-circle-with-hover-hover cx="50" cy="50" r="50" fill="#23242B"/>
+        <path d="M60.8284 50.4859L46.9055 60.232C46.2427 60.6959 45.332 60.2217 45.332 59.4127L45.332 39.9207C45.332 39.1117 46.2427 38.6375 46.9055 39.1015L60.8284 48.8475C61.3971 49.2456 61.3971 50.0878 60.8284 50.4859Z" fill="#E5CDB7"/>
+        </svg>
+      .web-item__frame
+        img(src="./assets/images/test-build.jpg").web-item__frame-preview
+        iframe(data-src="https://www.youtube.com/embed/DAlzlebbdPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+      .web-item__title Камера 5
+    .web-item 
+      <svg data-circle-with-hover class="web-item__play-button" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle data-circle-with-hover-default cx="50" cy="50" r="50" style="fill:#23242B"/>
+        <circle data-circle-with-hover-hover cx="50" cy="50" r="50" fill="#23242B"/>
+        <path d="M60.8284 50.4859L46.9055 60.232C46.2427 60.6959 45.332 60.2217 45.332 59.4127L45.332 39.9207C45.332 39.1117 46.2427 38.6375 46.9055 39.1015L60.8284 48.8475C61.3971 49.2456 61.3971 50.0878 60.8284 50.4859Z" fill="#E5CDB7"/>
+        </svg>
+      .web-item__frame
+        img(src="./assets/images/test-build.jpg").web-item__frame-preview
+        iframe(data-src="https://www.youtube.com/embed/DAlzlebbdPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+      .web-item__title Камера 5
+    .web-item 
+      <svg data-circle-with-hover class="web-item__play-button" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle data-circle-with-hover-default cx="50" cy="50" r="50" style="fill:#23242B"/>
+        <circle data-circle-with-hover-hover cx="50" cy="50" r="50" fill="#23242B"/>
+        <path d="M60.8284 50.4859L46.9055 60.232C46.2427 60.6959 45.332 60.2217 45.332 59.4127L45.332 39.9207C45.332 39.1117 46.2427 38.6375 46.9055 39.1015L60.8284 48.8475C61.3971 49.2456 61.3971 50.0878 60.8284 50.4859Z" fill="#E5CDB7"/>
+        </svg>
+      .web-item__frame
+        img(src="./assets/images/test-build.jpg").web-item__frame-preview
+        iframe(data-src="https://www.youtube.com/embed/DAlzlebbdPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+      .web-item__title Камера 5
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

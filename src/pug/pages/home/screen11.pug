@@ -1,0 +1,60 @@
+.screen11.contacts
+    .section-decor
+        +svg('logo-mini')
+    .title-h2.text-beige Контакти
+    .screen11__left
+        .screen11__group
+            .contacts-subtitle Відділ продажу:
+            .contacts-text м. Вінниця, вул. Максимовича, 6
+            button(type="button" class="button button--bordered button--dark with-hover") 
+                .button__hover
+                span Показати на карті
+        .screen11__group
+            .contacts-subtitle Графік роботи:
+            .contacts-text 
+                div Пн-Сб: 09:00-19:00
+                div Нд: 10:00-17:00
+        .screen11__group
+            .contacts-subtitle Будівництво:
+            .contacts-text м. Вінниця, вул. Максимовича, 6
+            button(type="button" class="button button--bordered button--dark with-hover") 
+                .button__hover
+                span Показати на мапі
+        .screen11__group
+            .contacts-subtitle Відділ продажу 2:
+            .contacts-text м.Вінниця,  вул. Магістратська, 82
+            a(type="button" class="button button--bordered button--dark with-hover" target='_blank' href="https://goo.gl/maps/ePMizWSmoiXT4yxK7") 
+                .button__hover
+                span Показати на карті
+        .screen11__group
+            .contacts-subtitle Графік роботи:
+            .contacts-text 
+                div Пн-Сб: 09:00-19:00
+                div Нд:  вихідний
+    .screen11__right
+        .screen11__group
+            a(href="./static/CP_presentations_compressed.pdf" target='_blank').button.with-hover 
+                .button__hover 
+                span Презентація комплексу
+        .screen11__group
+            .contacts-subtitle Соцмережі:
+            .contacts-text
+                a(href="#" target='_blank').contacts-link 
+                    span facebook
+                    <svg class="link__graphic link__graphic--slide " width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                    </svg>
+
+                a(href="#" target='_blank').contacts-link 
+                    span instagram
+                    <svg class="link__graphic link__graphic--slide " width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                    </svg>
+        .screen11__group-l
+            a(href="mailto:central-park@com.ua").link-l central-park@com.ua
+            //- a(href="./static/CP_presentations_compressed.pdf" target='_blank').link-l Презентація проекту
+            a(href="tel:+380441106104").link-l +38 (044) 110 61 04
+            button(type="button" class="button with-hover" data-form-wrapper-call) 
+                .button__hover
+                span Замовити дзвінок
+

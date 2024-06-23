@@ -1,0 +1,77 @@
+.breadcrumbs {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1em;
+  display: flex;
+  font-weight: 400;
+  color: var(--color-beige);
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 20px;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  line-height: 100%;
+  @include from(1680px){
+      font-size: 16px;
+      margin-bottom: 30px;
+  }
+  @include to(575px){
+      font-size: 12px;   
+  }
+  a {
+      text-decoration: none;
+  }
+  &-list {
+      display: flex;
+      max-width: 100%;
+      overflow: hidden;
+  }
+  &-item:not(:first-child):before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      display: inline-block;
+      background-color: var(--color-beige);
+      border-radius: 50%;
+      margin-left: 20px;
+      margin-right: 20px;
+      align-self: center;
+  }
+  &-item {
+      display: flex;
+  align-items: center;
+      &__link {
+          color: var(--color-gray);
+          
+          /* identical to box height, or 12px */
+
+          letter-spacing: 0.05em;
+          transition: .3s ease-in-out;
+      }
+      &__current--color {
+        color: #5D5755;
+          pointer-events: none;
+          // white-space: nowrap;
+          // overflow: visible;
+
+          // overflow: hidden;
+          text-overflow: ellipsis;
+      }
+  }
+
+  @include from(769px) {
+      .breadcrumbs-item__link:hover {
+          // color: $color-gold;
+      }
+  }
+  @include to(768px) {
+      white-space: nowrap;
+      &-item:last-child {
+          text-overflow: ellipsis;
+          overflow: hidden;
+      }
+  }
+}

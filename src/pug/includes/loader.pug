@@ -1,0 +1,59 @@
+.loader 
+    //- <svg class="loader__lines" width="42" height="920" viewBox="0 0 42 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //-     <path d="M8 8H0V920H8V8Z" fill="#E5CDB7"/>
+    //-     <path d="M20 0H11V970H20V0Z" fill="#E5CDB7"/>
+    //-     <path d="M31 0H23V970H31V0Z" fill="#E5CDB7"/>
+    //-     <path d="M42 8H34V920H42V8Z" fill="#E5CDB7"/>
+    //-     </svg>
+    .loader-curtain
+    <svg class="loader__lines gradient" preserveAspectRatio="xMinYMin meet" width="42" height="2920" viewBox="0 0 42 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //- <path class="static" data-finish-val="0.033" d="M8 8H0V920H8V8Z"       style="fill:url(#paint0_linear_38_3966)"/>
+        //- <path class="static" d="M20 0H11V920H20V0Z"    style="fill:url(#paint0_linear_38_3966)"/>
+        //- <path class="static" d="M31 0H23V920H31V0Z"    style="fill:url(#paint0_linear_38_3966)"/>
+        //- <path class="static" data-finish-val="0.033" d="M42 8H34V920H42V8Z"    style="fill:url(#paint0_linear_38_3966)"/>
+        <g>
+            <path  d="M8 8H0V1920H8V8Z"   data-finish-val="0.033"    style="fill: #E5CDB7"/>
+            <path  d="M20 0H11V1920H20V0Z"    data-finish-val="0.04" style="fill: #E5CDB7"/>
+            <path  d="M31 0H23V1920H31V0Z"    data-finish-val="0.04" style="fill: #E5CDB7"/>
+            <path  d="M42 8H34V1920H42V8Z"  data-finish-val="0.033"  style="fill: #E5CDB7"/>
+        </g>
+        
+        <defs>
+        <linearGradient id="paint0_linear_38_3966" x1="4" y1="8" x2="4" y2="920" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#E5CDB7"/>
+        <stop offset="1" stop-color="#E5CDB7" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_38_3966" x1="15.5" y1="0" x2="15.5" y2="920" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#E5CDB7"/>
+        <stop offset="1" stop-color="#E5CDB7" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_38_3966" x1="27" y1="0" x2="27" y2="920" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#E5CDB7"/>
+        <stop offset="1" stop-color="#E5CDB7" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="paint3_linear_38_3966" x1="38" y1="8" x2="38" y2="920" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#E5CDB7"/>
+        <stop offset="1" stop-color="#E5CDB7" stop-opacity="0"/>
+        </linearGradient>
+        </defs>
+        </svg>
+    .loader__counter 25
+    style(data-inner-style).
+        body:not(.home) .inner-front__image-in-logo path,
+        body:not(.home) .inner-front~*>* {
+            opacity: 0;
+        }
+        body:not(.home) .header>*:not(.header-logo),
+        body:not(.home) .inner-front__small-bottom-decor path,
+        body:not(.home) .inner-front__title>div,
+        body:not(.home) .inner-front__image-in-logo path,
+        body:not(.home) .breadcrumbs>* {
+            transform: translateY(101%);
+        }
+    script.
+        window.addEventListener('preloaderOff', () => document.querySelector('[data-inner-style]').remove())
+    script
+        include ./loader/loader.js
+    style
+        include ./loader/loader.css
+        

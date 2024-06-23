@@ -1,0 +1,172 @@
+.screen7 {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: var(--color-black);
+    position: relative;
+    padding-top: 180px;
+    padding-bottom: 180px;
+    --side-blocks-w: 40.2vw;
+    --side-blocks-h: 39vh;
+    --gutter: 70px;
+    @include to(575px){
+        // height: 350vh;
+        display: block;
+    }
+    @include to(992px){
+        --gutter: 18px;
+        --side-blocks-w: 60.2vw;
+    }
+    @include to(575px){
+        --side-blocks-w: 20.2vw;
+        align-content: center;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .title-h2 {
+        width: 100%;
+        padding-bottom: var(--gutter);
+        text-align: center;
+        @include to(992px){
+            
+            padding-bottom: calc(var(--gutter) * 2.5);
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        @include to(1024px){
+            height: 65vh;
+            overflow: hidden;
+            // align-content: flex-start;
+        }
+        // margin-left: -7.5vw;
+        // @include to(992px){
+        //     margin-left: -40.5vw;
+        // }
+    }
+    &__head-block {
+        width: 37.9vw;
+        width: calc(100vw - (var(--side-blocks-w)) - ((var(--gutter) * 2)));
+        height: 67vh;
+        height: auto;
+        // padding-left: var(--gutter);
+        // padding-right: var(--gutter);
+        position: relative;
+        overflow: hidden;
+        @include to(992px){
+            // width: 61vw;
+        }
+        @include to(1024px){
+            height: 100%;
+        }
+        &-text {
+            position: absolute;
+            left: 50%;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;justify-content: center;
+            bottom: 50px;
+            transform: translateX(-50%);
+            z-index: 2;
+            @include autoAlpha(0);
+        }
+        img {
+            height: 100%;
+            object-fit: cover;
+            @include to(575px) {
+                transform-origin: bottom center;
+            }
+        }
+    }
+    &__faded-title {
+        position: absolute;
+        top: 40vh;
+        left: 50%;
+        width: 50%;
+        height: auto;
+        height: 0;
+        transform: translateX(-50%) translateY(50%);
+        margin: auto;
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 60vw;
+        @include autoAlpha(0);
+        @include from-to(575px, 1024px){
+            width: 95vw;
+        }
+        @include to(575px){
+            width: 90vw;
+            top: 65vh;
+        }
+        .screen7-title {
+            margin-bottom: 40px;
+            @include to(575px){
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &__left-block {
+        width: var(--side-blocks-w);
+        height: var(--side-blocks-h);
+        display: grid;
+        grid-template-rows: 1fr;
+        gap: var(--gutter);
+        grid-template-columns: 1fr 1fr;
+        position: absolute;
+        top: calc(50% - var(--side-blocks-h) / 2);
+        left: calc(var(--side-blocks-w) / -2);
+        // transform: translateX(-50%) translateY(-50%);
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__right-block {
+        width: var(--side-blocks-w);
+        height: var(--side-blocks-h);
+        display: grid;
+        gap: var(--gutter);
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        position: absolute;
+        top: calc(50% - var(--side-blocks-h) / 2);
+        right: calc(var(--side-blocks-w) / -2);
+        // transform: translateX(50%)  translateY(-50%);
+        
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+        & > :nth-child(2) {
+            grid-area: 1/2/3/2;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .screen7-title {
+        font-weight: 300;
+        font-size: 100px;
+        line-height: 100%;
+        /* or 90px */
+        letter-spacing: -0.03em;
+        /* Светлый */
+        color: #E5CDB7;
+        @include to(1680px){
+            font-size: 64px;
+        }
+        @include to(575px){
+            font-size: 30px;
+        }
+    }
+}

@@ -1,0 +1,160 @@
+.screen8 {
+    --right-img-v-margin: -175px;
+    @include from(1680px){
+        --right-img-v-margin: -250px;
+        
+    }
+    position: relative;
+    padding-top: 240px;
+
+    @include row-flex();
+    align-content: flex-end;
+    align-items: flex-end;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    background: linear-gradient(180deg, #23242B 0%, rgba(35, 36, 43, 0) 76.62%),  linear-gradient(180deg, #263D6A 3.59%, #DCF7FF 100%);
+    @include to(992px){
+        --right-img-v-margin: -50px;
+    }
+    @include to(1024px){
+        padding-top: 100px;
+    }
+    &__text {
+        @include size(6);
+        @include shift-left(2);
+        @include shift-right(0);
+        height: 0;
+        @include to(992px){
+            @include shift(0);
+            height: auto;
+            @include size(12);
+            height: 120px;
+            margin-top: 50px;
+        }
+        @include to(575px){
+            height: auto;
+            @include size(16);
+            @include shift-left(4);
+            margin-bottom: 55px;
+        }
+        @include from(1681px){
+            &>:nth-last-child(n+2) {
+                margin-bottom: 60px;
+            }
+        }
+        p {
+            @include from(576px){
+                max-width: 70%;
+            }
+        }
+    }
+    .title {
+        color: #E5CDB7;
+        @include to(1680px){
+            margin-bottom: 20px;
+        }
+    }
+    &__clouds {
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 72%;
+        height: auto;
+        transform: translateX(-50%);
+        @include to(575px){
+            max-width: none;
+            width: 170%;
+        }
+
+    }
+    p {
+        @include to(1680px){
+            margin-bottom: 40px;
+        }
+    }
+    .img-left {
+        position: relative;
+        @include size(6);
+        @include shift-left(2);
+        @include shift-right(2);
+        align-self: flex-start;
+        margin-top: 175px;
+        &__decor {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 60%;
+            transform: translate(-50%,-50%);
+            z-index: 0;
+        }
+        @include to(992px){
+            z-index: 1;
+            @include size(8);
+            @include shift(0);
+        }
+        @include to(575px){
+            @include size(9);
+            margin-top: -40px;
+        }
+    }
+    .img-center {
+        position: relative;
+        @include size(11);
+        @include shift-left(0);
+        @include shift-right(0);
+        @include to(992px){
+            @include size(17);
+            @include shift-left(-5);
+            z-index: 0;
+        }
+        @include to(575px){
+            @include shift-left(-5);
+            @include size(20);
+        }
+        &:before {
+            content: '';
+            position: absolute;
+        }
+    }
+    .img-right {
+        position: relative;
+        z-index: 2;
+        @include shift-left(-4);
+        @include from(1921px){
+            @include shift-left(-2);
+        }
+        margin-bottom: var(--right-img-v-margin);
+        &__decor {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 60%;
+            transform: translate(-50%,-50%);
+            z-index: 0;
+        }
+        @include to(992px){
+            z-index: 3;
+            @include size(6);
+        }
+        @include to(575px){
+            display: none;
+        }
+    }
+    &__render {
+        width: calc(100vw + (var(--page-side-fields) * 2));
+        margin-left: calc(var(--page-side-fields) * -1);
+        margin-right: calc(var(--page-side-fields) * -1);
+        height: calc(100vw / 1920 * 1649);
+        position: relative;
+        pointer-events: none;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom right;
+            @include to(575px){
+                object-position: top right;
+            }
+        }
+    }
+}

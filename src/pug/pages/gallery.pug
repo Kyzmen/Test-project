@@ -1,0 +1,78 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Галерея'
+    var id_page = 'id-page-gallery'
+    var class_page = 'class-page-gallery'
+    var breadcrumbsSubitem = [
+    ]
+    var slides = [
+      './assets/images/gallery/slider/Central_Park_Vinnytsia_View_08_final.jpg'  ,
+      './assets/images/gallery/slider/1 (2) (1).jpg'  ,
+      './assets/images/gallery/slider/12 (1).jpg'  ,
+      './assets/images/gallery/slider/15 (1).jpg'  ,
+      './assets/images/gallery/slider/4 (1).jpg'   ,
+      './assets/images/gallery/slider/7.jpg'     ,
+      './assets/images/gallery/slider/10 (1).jpg'     ,
+      './assets/images/gallery/slider/13 (1).jpg'  ,
+      './assets/images/gallery/slider/2 (2).jpg'    ,
+      './assets/images/gallery/slider/5.jpg'       ,
+      './assets/images/gallery/slider/8.jpg'     ,
+      './assets/images/gallery/slider/11 (1).jpg'     ,
+      './assets/images/gallery/slider/14 (1).jpg'  ,
+      './assets/images/gallery/slider/3 (1).jpg'    ,
+      './assets/images/gallery/slider/6.jpg',
+    ];
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/index-app.bundle.js')
+  script(defer src='./assets/scripts/gallery.bundle.js')
+block content
+  +InnerPageFront(title_page, 'some', './assets/images/gallery/front.jpg')
+    
+    
+
+    
+  <svg class="gallery-switcher" data-gallery-switcher width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="60" fill="#23242B"/>
+    <g class="gallery-switcher__nav">
+      <text fill="white" x="21" y="66">01</text>
+      <text fill="#858585" x="42" y="66">/</text>
+      <text fill="#858585" x="49" y="66">01</text>
+    </g>
+    //- <path d="M26.2905 66.162C24.8385 66.162 23.7345 65.604 22.9785 64.488C22.2225 63.372 21.8445 61.758 21.8445 59.646C21.8445 57.522 22.2225 55.908 22.9785 54.804C23.7345 53.7 24.8385 53.148 26.2905 53.148C27.7545 53.148 28.8585 53.7 29.6025 54.804C30.3585 55.896 30.7365 57.504 30.7365 59.628C30.7365 61.752 30.3525 63.372 29.5845 64.488C28.8285 65.604 27.7305 66.162 26.2905 66.162ZM26.2905 64.884C27.2985 64.884 28.0425 64.458 28.5225 63.606C29.0145 62.754 29.2605 61.428 29.2605 59.628C29.2605 57.828 29.0205 56.514 28.5405 55.686C28.0605 54.846 27.3105 54.426 26.2905 54.426C25.2825 54.426 24.5325 54.846 24.0405 55.686C23.5605 56.526 23.3205 57.84 23.3205 59.628C23.3205 61.428 23.5605 62.754 24.0405 63.606C24.5325 64.458 25.2825 64.884 26.2905 64.884ZM33.3754 66V64.74H36.2734V55.092L33.9874 56.532L33.3574 55.434L36.6874 53.31H37.7494V64.74H40.4674V66H33.3754Z" fill="white"/>
+    //- <path d="M42.2064 67.134L41.0544 66.792L45.6624 52.464L46.8324 52.806L42.2064 67.134ZM48.1861 66V64.74H51.0841V55.092L48.7981 56.532L48.1681 55.434L51.4981 53.31H52.5601V64.74H55.2781V66H48.1861ZM62.993 66V63.282H57.143V62.166L63.245 53.31H64.487V62.022H66.377V63.282H64.487V66H62.993ZM62.993 62.022V55.74L58.673 62.022H62.993Z" fill="#858585"/>
+    <path class="gallery-switcher__arrow" d="M88.8443 49C90.7938 51.9184 98.1804 60 100 60M100 60C98.1588 60 91.0104 67.5204 88.8443 71M100 60L75 60" stroke="#E5CDB7" stroke-width="2"/>
+    </svg>
+  .gallery-swiper__wrapper
+    .front-block__canvas-wrap-mob-nav 
+      <svg data-gallery-prev width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle r="20" transform="matrix(-1 0 0 1 20 20)" fill="#23242B"/>
+        <path d="M18.2997 14C17.1988 15.6149 13.0275 20.087 12 20.087M12 20.087C13.0398 20.087 17.0765 24.2484 18.2997 26.1739M12 20.087L28 20.087" stroke="#E5CDB7"/>
+        </svg>
+      <svg data-gallery-next width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="20" fill="#23242B"/>
+        <path d="M21.7003 14C22.8012 15.6149 26.9725 20.087 28 20.087M28 20.087C26.9602 20.087 22.9235 24.2484 21.7003 26.1739M28 20.087L12 20.087" stroke="#E5CDB7"/>
+      </svg>
+    .gallery-swiper.swiper
+      .gallery-swiper-wrapper.swiper-wrapper
+        .swiper-slide(data-gallery-slide)
+          .gallery-parallax-bg(style="background-image:url(https://picsum.photos/200/300)" data-swiper-parallax="200")
+        .swiper-slide(data-gallery-slide)
+          .gallery-parallax-bg(style="background-image:url(https://picsum.photos/200/300)" data-swiper-parallax="200")
+        .swiper-slide(data-gallery-slide)
+          .gallery-parallax-bg(style="background-image:url(https://picsum.photos/200/300)" data-swiper-parallax="200")
+  //- each val in slides
+  //-   img(data-info-item-anim-img=val)
+  //-   div(data-info-item-anim="data-info-item-anim" class="active" data-hover-image=val) fg
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

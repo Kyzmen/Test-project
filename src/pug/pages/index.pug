@@ -1,0 +1,409 @@
+extends ../layout/main
+block variable
+  - 
+    var class_page = 'home';
+    var scr5 = [
+      { 
+        img: './assets/images/screen5/226959776.jpg',
+        title: "ЖИВИ",
+        text: "Широке різноманіття планувань, продуманих під будь-який смак та потреби, власна школа, дитячий садок, гуртки та секції для розвитку.",},
+      { title: "ПРАЦЮЙ",
+        img: './assets/images/screen5/291632337.jpg',
+      text: "Широкий вибір офісних та комерційних приміщень, магазинів, сервісних об'єктів, фінансових та юридичних установ",},
+      { title: "ВІДПОЧИВАЙ",
+        img: './assets/images/screen5/2269597762.jpg',
+      text: "Власна інфраструктура для розваг та відпочинку: вільний від машин двір поділений на тематичні майданчики: дитячі для різного віку, спортивну зону, територію активного та спокійного відпочинку, SPA-салон, фітнес-клуб, кав'ярня, кондитерська, ресторан, пекарня та ще понад 100 об'єктів інфраструктури.",},
+    ];
+    var genplanList = [
+      {attr: 'areas_finals',icon: 'bycicle',text: 'Дороги та пішохідні доріжки', headTitle: 'Автомобільні шляхи', icon: '<svg fill="none" width="48" height="31" viewBox="0 0 48 31"  xmlns="http://www.w3.org/2000/svg"><circle cx="8.74936" cy="22.0228" r="7.99936" stroke="#23242B" stroke-width="1.5" stroke-linecap="round"/><circle cx="39.2503" cy="22.0228" r="7.99936" stroke="#23242B" stroke-width="1.5" stroke-linecap="round"/><path d="M21.8126 22.0835H8.38477L17.8025 11.3899M21.8126 22.0835L33.2961 6.46835M21.8126 22.0835L17.8025 11.3899M33.2961 6.46835L39.129 22.0835M33.2961 6.46835L33.0045 5.73923M36.4556 1L31.8379 2.82278L33.0045 5.73923M33.0045 5.73923L17.8025 11.3899M17.8025 11.3899L15.7367 5.92151M15.7367 5.92151H19.1999M15.7367 5.92151H11.7265" stroke="#23242B" stroke-width="1.5" stroke-linecap="round"/></svg>'},
+      {attr: 'areas_1', text: 'Майданчики для відпочинку', icon: '<svg fill="none" width="30" height="47" viewBox="0 0 30 47"  xmlns="http://www.w3.org/2000/svg"><path d="M14.4915 11.5976H14.4919L16.5775 11.5987C16.5776 11.5987 16.5778 11.5987 16.5779 11.5987C17.9231 11.5988 19.178 12.3086 19.7387 13.4023L19.7387 13.4023C20.1805 14.2642 20.2562 15.1383 20.3167 15.8358C20.3243 15.9232 20.3316 16.008 20.3394 16.0895C20.4929 17.6912 20.5924 18.687 21.7354 19.5067C22.9335 20.1656 24.9353 21.4194 26.4044 22.3396C27.0489 22.7433 27.5909 23.0828 27.9175 23.2796L27.9246 23.2839L27.9315 23.2883C28.6674 23.7541 28.9657 24.7438 28.6527 25.5409L28.6525 25.5414C28.3354 26.3475 27.4304 26.8554 26.5669 26.6408L26.5582 26.6387L26.5495 26.6363C26.2596 26.5568 25.9465 26.4741 25.6154 26.3867C24.2142 26.0168 22.4924 25.5623 20.8614 24.907C19.9158 24.5272 18.9773 24.0627 18.1194 23.4822L17.2838 27.0461C18.158 28.9856 19.1647 30.8834 20.2023 32.8395C20.5166 33.432 20.8338 34.0299 21.1509 34.6359C22.5471 37.3037 23.9286 40.1026 24.9921 43.1882C24.9931 43.1905 24.9944 43.1935 24.9962 43.1976L24.9977 43.2009C25.0058 43.219 25.0265 43.2653 25.0447 43.3183L25.0469 43.3249L25.0469 43.3249C25.3327 44.1831 24.9194 45.217 24.0773 45.6001L24.0771 45.6002C23.2196 45.9899 22.1773 45.5909 21.7598 44.7694L21.7544 44.7589L21.7545 44.7588C19.3728 39.8841 15.7821 34.9847 11.4362 30.0718L13.3775 33.1123C13.6636 33.5505 13.7514 34.1055 13.62 34.6103L13.6185 34.6164C12.9701 37.0253 11.2272 39.2156 9.40388 41.0737L9.40385 41.0738C8.13441 42.3673 6.7739 43.5155 5.53888 44.4162L5.53792 44.4169C5.23542 44.6368 4.86761 44.8827 4.50493 45.1252C4.31929 45.2493 4.135 45.3725 3.9615 45.4908L3.93941 45.5059L3.91632 45.5194C3.10564 45.9915 2.0309 45.7067 1.53339 44.9308C1.0452 44.1695 1.20069 43.0742 1.90253 42.4908L1.90948 42.485L1.90951 42.485C3.45614 41.2306 5.08917 39.1456 6.26673 36.9291L14.4915 11.5976ZM14.4915 11.5976C11.696 11.5976 7.09362 12.9616 4.59631 17.4095L4.5963 17.4095M14.4915 11.5976L4.5963 17.4095M10.7548 29.3081C10.2878 28.7893 9.81276 28.2704 9.33006 27.7513C8.92929 27.3216 8.75723 26.705 8.86456 26.1317L8.86514 26.1287L10.1485 19.428C9.93465 19.5043 9.74784 19.5928 9.5802 19.6926C9.18433 19.9283 8.85164 20.2531 8.51369 20.7191C8.09218 21.3008 7.6896 22.1212 7.23742 23.2187C6.91624 23.9981 6.58311 24.8837 6.20563 25.8871C6.05267 26.2937 5.89243 26.7197 5.72276 27.1658L5.71763 27.1793L5.71199 27.1926C5.37029 27.9964 4.43931 28.4771 3.57859 28.2263L10.7548 29.3081ZM10.7548 29.3081C10.4102 29.0849 9.99151 28.9778 9.5721 29.0313L9.57043 29.0315C8.63733 29.1527 7.95792 30.0465 8.00537 30.9549L8.00554 30.9579C8.08819 32.4281 7.44984 34.7014 6.26678 36.9291L10.7548 29.3081ZM4.5963 17.4095C3.7925 18.8412 3.29492 20.6008 2.96016 22.196C2.71497 23.3644 2.54824 24.4947 2.41976 25.3657C2.37318 25.6814 2.33163 25.9631 2.29319 26.2002L2.29075 26.2152M4.5963 17.4095L2.29075 26.2152M2.29075 26.2152L2.28893 26.2303M2.29075 26.2152L2.28893 26.2303M2.28893 26.2303C2.18564 27.0859 2.72798 27.9785 3.5785 28.2263L2.28893 26.2303ZM24.9959 43.1991L24.9956 43.1984L24.9959 43.1991ZM9.66699 29.7753C9.14907 29.8425 8.72591 30.3713 8.75435 30.9158L9.66699 29.7753ZM17.0993 1.25C14.3627 1.25 12.1768 3.58037 12.1768 6.35706C12.1768 9.13375 14.3626 11.4641 17.0993 11.4641C19.8361 11.4641 22.0219 9.13375 22.0219 6.35706C22.0219 3.58038 19.8361 1.25 17.0993 1.25Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>',text: 'Зелені зони', headTitle: 'Площі 1',},
+      {attr: 'areas_2', text: 'Дитячий садок, школа, дитячі та спортивні майданчики', icon: '<svg fill="none" width="38" height="44" viewBox="0 0 38 44"  xmlns="http://www.w3.org/2000/svg"><path d="M33.3128 23.5894V26.7338M33.3128 26.7338L34.6041 25.1616M33.3128 26.7338V30.4622M33.3128 30.4622L31.5317 28.0814M33.3128 30.4622V43.2218" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M25.9705 13.2769V18.1001M25.9705 18.1001L23.9317 15.6885M25.9705 18.1001V23.8191M25.9705 23.8191L28.7827 20.1672M25.9705 23.8191V43.2219" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M37.0069 23.6656C37.4749 26.1991 37.2344 28.0582 36.5628 29.2497C35.9195 30.391 34.823 31.0244 33.254 31.0244C31.99 31.0244 31.0443 30.7335 30.4108 30.0294C29.7636 29.3099 29.296 27.9991 29.3811 25.6174C29.4662 23.2355 29.9993 20.8655 30.7659 19.1138C31.1501 18.236 31.5774 17.5492 32.0064 17.0941C32.4408 16.6334 32.8047 16.4824 33.0779 16.4824C33.8457 16.4824 34.5615 16.8914 35.2443 18.0465C35.9411 19.2251 36.5274 21.0696 37.0069 23.6656Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M29.0994 25.6328C29.4634 25.4351 29.5982 24.9797 29.4005 24.6158C29.2028 24.2518 28.7474 24.117 28.3835 24.3147L29.0994 25.6328ZM32.3989 15.7771C32.3989 16.1913 32.7347 16.5271 33.1489 16.5271C33.5632 16.5271 33.8989 16.1913 33.8989 15.7771H32.3989ZM28.3835 24.3147C28.1374 24.4483 27.2098 24.8041 25.9812 24.8041V26.3041C27.4594 26.3041 28.6332 25.886 29.0994 25.6328L28.3835 24.3147ZM25.9812 24.8041C25.1971 24.8041 23.5545 24.6656 22.0935 23.7706C20.6832 22.9066 19.3514 21.2853 19.2065 18.109L17.708 18.1774C17.8748 21.8316 19.4591 23.9158 21.3099 25.0496C23.1099 26.1524 25.0735 26.3041 25.9812 26.3041V24.8041ZM19.2065 18.109C19.0552 14.7929 19.6745 10.6091 20.9341 7.27525C21.564 5.6079 22.3373 4.19853 23.2163 3.21902C24.0924 2.24281 25.0179 1.75 25.9812 1.75V0.25C24.4513 0.25 23.1508 1.04628 22.1 2.21715C21.0521 3.38473 20.1976 4.98046 19.5309 6.7451C18.1972 10.2752 17.5477 14.6631 17.708 18.1774L19.2065 18.109ZM25.9812 1.75C26.9118 1.75 27.7903 2.27523 28.6215 3.30332C29.4521 4.33065 30.1578 5.77122 30.7287 7.3686C31.8716 10.5668 32.3989 14.1758 32.3989 15.7771H33.8989C33.8989 13.9855 33.3355 10.2059 32.1412 6.86381C31.5434 5.19103 30.7688 3.57349 29.788 2.36027C28.8077 1.14779 27.5437 0.25 25.9812 0.25V1.75Z" fill="white"/><path d="M4.74786 7.05672C4.74786 8.18809 3.84428 9.08952 2.74893 9.08952C1.65358 9.08952 0.75 8.18809 0.75 7.05672C0.75 5.92536 1.65358 5.02393 2.74893 5.02393C3.84428 5.02393 4.74786 5.92536 4.74786 7.05672Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M15.7435 7.05672C15.7435 8.18809 14.8399 9.08952 13.7445 9.08952C12.6492 9.08952 11.7456 8.18809 11.7456 7.05672C11.7456 5.92536 12.6492 5.02393 13.7445 5.02393C14.8399 5.02393 15.7435 5.92536 15.7435 7.05672Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M8.44434 6.46387V43.2223" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="5.81689" y1="7.42285" x2="11.0724" y2="7.42285" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>',text: 'Пішохідні маршрути, що виключають рух автомобілів', headTitle: 'Площі 2',},
+      {attr: 'commerce', text: 'Комерційні приміщення', icon: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"><path fill="#000000" d="M2423.7,4983.6c-44-19.1-99.5-65.1-124.4-99.5l-45.9-65.1l-5.7-2004l-3.8-2005.9h-943.6c-939.8,0-943.6,0-1027.9-42.1c-63.2-32.5-97.6-67-130.2-130.2L100,552.6v-2538v-2538l44-84.2c30.6-63.2,65.1-97.6,128.2-130.2l84.2-42.1H5000h4643.5l84.2,44c63.2,30.6,97.6,65.1,130.2,128.2l42.1,84.2v2825.1c0,2742.8-1.9,2825.2-38.3,2903.6c-19.1,45.9-61.3,97.6-93.8,116.7c-30.6,19.1-721.6,357.9-1531.3,752.2l-1475.7,715.9v985.7c0,985.7,0,987.7-42.1,1071.9c-32.5,63.2-67,97.6-130.2,130.2l-84.2,42.1H4502.3C2594,5020,2498.3,5018.1,2423.7,4983.6z M6297.7,2635.1L6292,709.5l-947.5-505.3l-947.5-503.4l-9.6,486.2l-9.6,488.1l-63.2,61.3l-61.3,63.2l-775.2,5.7l-775.2,5.7v1873.9v1875.8h1799.2h1799.2L6297.7,2635.1z M8125.7,1622.5l1305.4-635.5l5.7-2652.9l3.8-2654.8H6914.1H4387.5l3.8,1753.3l5.7,1755.2l1129.3,599.1C6146.5,118.1,6676.7,409,6703.5,435.8l47.9,47.9l5.7,899.6c3.8,798.2,7.7,897.7,34.4,886.2C6806.9,2263.8,7407.9,1972.8,8125.7,1622.5z M3928.1-1985.5v-2335.2H2243.7H559.4v2335.2V349.7h1684.4h1684.4V-1985.5z"/><path fill="#000000" d="M3583.6,2991.1v-344.5h344.5h344.5v344.5v344.5h-344.5h-344.5V2991.1z"/><path fill="#000000" d="M4885.2,2991.1v-344.5h344.5h344.5v344.5v344.5h-344.5h-344.5V2991.1z"/><path fill="#000000" d="M3583.6,1651.3v-344.5h344.5h344.5v344.5v344.5h-344.5h-344.5V1651.3z"/><path fill="#000000" d="M4885.2,1651.3v-344.5h344.5h344.5v344.5v344.5h-344.5h-344.5V1651.3z"/><path fill="#000000" d="M7679.7-148v-421.1h497.7H8675V-148v421.1h-497.7h-497.7V-148z"/><path fill="#000000" d="M5000-1640.9V-2062h497.7h497.7v421.1v421.1h-497.7H5000V-1640.9z"/><path fill="#000000" d="M6339.8-1640.9V-2062h497.7h497.7v421.1v421.1h-497.7h-497.7V-1640.9z"/><path fill="#000000" d="M7679.7-1640.9V-2062h497.7H8675v421.1v421.1h-497.7h-497.7V-1640.9z"/><path fill="#000000" d="M5000-3133.9V-3555h497.7h497.7v421.1v421.1h-497.7H5000V-3133.9z"/><path fill="#000000" d="M7679.7-3133.9V-3555h497.7H8675v421.1v421.1h-497.7h-497.7V-3133.9z"/><path fill="#000000" d="M1401.6-645.6v-306.3h306.3h306.2v306.3v306.3h-306.2h-306.3V-645.6z"/><path fill="#000000" d="M2626.6-645.6v-306.3h306.3h306.3v306.3v306.3h-306.3h-306.3V-645.6z"/><path fill="#000000" d="M1401.6-1870.6v-306.3h306.3h306.2v306.3v306.3h-306.2h-306.3V-1870.6z"/><path fill="#000000" d="M2626.6-1870.6v-306.3h306.3h306.3v306.3v306.3h-306.3h-306.3V-1870.6z"/><path fill="#000000" d="M2014.1-3133.9V-3555h306.3h306.3v421.1v421.1h-306.3h-306.3V-3133.9z"/></g></svg>',text: 'Комерційні приміщення', headTitle: 'Комерційні приміщення',},
+      //- {attr: 'areas_2', icon: 'auto',text: 'Автомобілем',},
+    ];
+    var genplanFaq = [
+      ['#F29522', 'Дороги'],
+      ['#C2B078', 'Пішохідні доріжки'],
+      ['#D2CB87', 'Дитячий садок, школа'],
+      ['#E1A6A8', 'Дитячі та спортивні майданчики'],
+      ['#A0BADF', 'Комерційні приміщення'],
+    ]
+
+    var genplanMapPoints = [
+      ['5 заїздів', "Дороги"],
+      ['Територія', "Пішохідні доріжки"],
+      ['Рекреація', "Майданчики для відпочинку, дитячі та спортивні майданчики"],
+      ['Комфорт', "Дитячий садок, школа"],
+      ['Бізнес', "Комерційні приміщення"],
+    ]
+block meta
+  title= 'Главная'
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/index-app.bundle.js')
+  script(defer src='./assets/scripts/home.bundle.js')
+block content
+  .main-screen
+    .promotions-wrapper 
+      a(href="#").promotion 
+        .promotion__left Black Friday
+        .promotion__right Чорна п’ятниця у жк Central Park
+      a(href="#").promotion 
+        .promotion__left HOT SALE
+        .promotion__right  Чорна п’ятниця у жк Central ParkЧорна п’ятниця у жк Central ParkЧорна п’ятниця у жк Central ParkЧорна п’ятниця у жк Central Park
+      a(href="#").promotion 
+        .promotion__left HOT SALE
+        .promotion__right Чорна п’ятниця у жк Central Park
+    .main-screen__text
+      .title 
+        .text-white Central Park Vinnytsia - 
+        .text-beige.fw-300.title-h2 LIVE. WORK. REST.
+      p.subtitle.text-white Ми створюємо новий тренд сучасного житла.   
+      button.button.button--dark.with-hover 
+        .button__hover
+        //- +svg('key')
+        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.3571 10.6923H9.90476M9.90476 10.6923V8.80769M9.90476 10.6923V16.6154H6.5M9.90476 1H1V16.6154H6.5M9.90476 1V4.5M9.90476 1H23V10.6923H20.9048M17.2381 10.6923H20.9048M20.9048 10.6923V22H6.5V16.6154"/>
+          </svg>
+        span Обрати квартиру
+    //- img(src="./assets/images/screen1-min.png")
+    picture
+      source(srcset="./assets/images/screen1-render-mobile.png" media="(max-width: 575px)")
+      img(src="./assets/images/screen1-min.png").main-screen__render
+    picture
+      source(srcset="./assets/images/screen1-clouds-mobile.png" media="(max-width: 575px)")
+      img(src="./assets/images/screen1-clouds.png").main-screen__cloud-1
+    //- +img('screen1-clouds.png').main-screen__cloud-1
+    +img('screen1-clouds-2.png').main-screen__cloud-2
+    .main-screen__video-wrap
+      <video class="main-screen__video" muted="" autoplay="" loop="" playsinline="">
+        <source src="./assets/images/video-mobile.mp4" type="video/mp4" media="(max-width: 575px)">
+        <source src="./assets/images/video-mobile.mp4" type="video/mp4">
+      </video>
+      <button class="section-1__video-button" id="toggle-sound-button" style="position: absolute;">
+        <svg class="section-1__video-button-off" enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" x1="32" x2="42" y1="20" y2="30"></line>
+          <line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" x1="42" x2="32" y1="20" y2="30"></line>
+          <rect fill="none" height="50" width="50"></rect>
+          <rect fill="none" height="50" width="50"></rect>
+          <path d="M10,33H3  c-1.103,0-2-0.898-2-2V19c0-1.102,0.897-2,2-2h7" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.08"></path>
+          <path d="M9.604,32.43  C9.256,32.129,9,31.391,9,30.754V19.247c0-0.637,0.256-1.388,0.604-1.689L22.274,4.926C23.905,3.27,26,3.898,26,6.327v36.988  c0,2.614-1.896,3.604-3.785,1.686L9.604,32.43z" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.9797"></path>
+        </svg>
+        <svg class="section-1__video-button-on" enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect fill="none" height="50" width="50"></rect>
+          <path d="M10,33H3  c-1.103,0-2-0.898-2-2V19c0-1.102,0.897-2,2-2h7" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.08"></path>
+          <path d="M9.604,32.43  C9.256,32.129,9,31.391,9,30.754V19.247c0-0.637,0.256-1.388,0.604-1.689L22.274,4.926C23.905,3.27,26,3.898,26,6.327v36.988  c0,2.614-1.896,3.604-3.785,1.686L9.604,32.43z" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.9797"></path>
+          <path d="M30.688,19.417C33.167,20.064,35,22.32,35,25s-1.833,4.936-4.312,5.584" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"></path>
+          <path d="M34.92,13.142C39.136,15.417,42,19.873,42,25c0,5.111-2.85,9.557-7.045,11.835" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2">
+          </path>
+          <path d="M38.498,7.82c6.276,3.167,10.579,9.668,10.579,17.18c0,7.512-4.303,14.014-10.579,17.18" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2">
+          </path>
+        </svg>
+      </button>
+      <a class="button-down">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+          <g>
+          <g>
+          <g>
+          <path d="M256,0C114.88,0,0,114.88,0,256s114.88,256,256,256s256-114.88,256-256S397.12,0,256,0z M256,490.667c-129.387,0-234.667-105.28-234.667-234.667S126.613,21.333,256,21.333S490.667,126.613,490.667,256S385.387,490.667,256,490.667z"></path>
+          <path d="M365.76,280.533l-99.093,99.093V107.093c0-5.333-3.84-10.133-9.067-10.88c-6.613-0.96-12.267,4.16-12.267,10.56v272.96l-99.093-99.2c-4.267-4.053-10.987-3.947-15.04,0.213c-3.947,4.16-3.947,10.667,0,14.827l117.333,117.333c4.16,4.16,10.88,4.16,15.04,0l117.333-117.333c4.053-4.267,3.947-10.987-0.213-15.04C376.533,276.587,369.92,276.587,365.76,280.533z"></path>
+          </g>
+          </g>
+          </g>
+        </svg>
+      </a>
+
+  .screen2
+    .img-with-logo
+      +svg('logo-mini').img-with-logo__decor
+      .img-with-logo__wrap
+        img(data-src="./assets/images/screen2/Rectangle 3967.jpg")
+        //- +img('screen2/Rectangle 3967.jpg')
+    .screen2__text 
+      .title-h2.text-black Про проєкт
+      p Forest Home запустив віртуальні шоуруми найпопулярніших планувань у будинку, щоб при виборі помешкання ви могли побачити розташування кімнат і навіть оцінити вид з вікон.  віртуальні шоуруми найпопулярніших планувань у будинку, щоб при виборі помешкання.
+      button(type="button" class="button button--dark with-hover") 
+        .button__hover 
+        span Дізнатися більше
+    .img-with-logo
+      +svg('logo-mini').img-with-logo__decor
+      .img-with-logo__wrap
+        +img('screen2/212518407.jpg')
+  -
+    var slides = [
+      { img: './assets/images/screen3/11.jpg', text: '8.1 га площа території комплексу',},
+      { img: './assets/images/screen3/10.jpg', text: '19 будинків',},
+      { img: './assets/images/screen3/9.jpg', text: '15, 16, 18, 20-ти поверхові будинки',},
+      { img: './assets/images/screen3/8.jpg', text: '3009 квартир',},
+      { img: './assets/images/screen3/7.jpg', text: '2163 паркомісця',},
+      { img: './assets/images/screen3/2.jpg', text: '2 навчальні заклади на території комплексу.',},
+      { img: './assets/images/screen3/2.jpg', text: '2.1 га площа забудови',},
+      { img: './assets/images/screen3/2.jpg', text: '19 індивідуальних фасадів будинків',},
+      { img: './assets/images/screen3/2.jpg', text: '3830 м² дитячих майданчиків',},
+      { img: './assets/images/screen3/2.jpg', text: '1095 м² спортивних майданчиків',},
+      { img: './assets/images/screen3/1.jpg', text: '1095 м² місць для відпочинку',},
+      //- { img: './assets/images/screen3/251624276_prev_url=detail.jpg',text: '2,4 гаплоща забудови', },
+      //- { img: './assets/images/screen3/Rectangle 3962.jpg',text: '5 будівель різної висоти ', },
+      //- { img: './assets/images/screen3/Rectangle 3962-1.jpg',text: '10 секцій у кожному будинку', },
+      //- { img: './assets/images/screen3/Rectangle 3962-2.jpg',text: '178 квартир у першій будівлі ', },
+      //- { img: './assets/images/screen3/Rectangle 3962-3.jpg',text: '650 паркомісць у паркінгу', },
+      //- { img: '',text: '10 поверхів', },
+    ];
+  .screen3
+    .section-decor
+      +svg('logo-mini')
+    .screen3__top
+      .title-h2.text-beige комплекс у цифрах
+      div(data-screen3-prev)
+        <svg data-circle-with-hover width="80" height="80" viewBox="0 0 80 80"  xmlns="http://www.w3.org/2000/svg">
+          <circle data-circle-with-hover-default cx="40" cy="40" r="39.5" />
+          <circle data-circle-with-hover-hover cx="40" cy="40" r="39.5" />
+          <path d="M35.1896 32C33.7584 34.1224 28.3358 40 27 40M27 40C28.3517 40 33.5994 45.4694 35.1896 48M27 40L53 40"/>
+          </svg>
+      div(data-screen3-next)
+        <svg data-circle-with-hover width="80" height="80" viewBox="0 0 80 80"  xmlns="http://www.w3.org/2000/svg">
+          <circle data-circle-with-hover-default cx="40" cy="40" r="39.5" />
+          <circle data-circle-with-hover-hover cx="40" cy="40" r="39.5" />
+          <path d="M44.8104 32C46.2416 34.1224 51.6642 40 53 40M53 40C51.6483 40 46.4006 45.4694 44.8104 48M53 40L27 40"/>
+          </svg>
+    .zoom-slider-wrapper
+      .zoom-slider.swiper-wrapper
+        each val in slides 
+          .slide.swiper-slide
+            img(data-src=val.img)
+            div #{val.text}
+  .screen4
+    .section-decor
+      +svg('logo-mini')
+    .screen4__inner
+      .screen4__title 
+        div ДИВИТИСЯ 
+        div ВІДЕО
+      .screen4__video(data-screen4-video)
+        <svg class="screen4__video-play" width="100" height="100" viewBox="0 0 100 100"  xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="#23242B"/>
+          <path d="M44 63V37L63 50L44 63Z" fill="white"/>
+          </svg>
+        video(poster="./assets/images/screen4/poster.jpg")
+          source(src="./static/video.mp4")
+  .screen5()
+    .section-decor
+      +svg('logo-mini')
+    .screen5__inner
+      .screen5__inner-top
+        .title-h2.text-beige Переваги 
+      .screen5-hor-block
+        each val, index in scr5 
+          .screen5-hor-block__item
+              img(src=val.img)
+              .screen5-hor-block__item-text
+                .title.text-beige #{val.title}
+                p.text-beige #{val.text}
+                div.text-beige #{index + 1} / #{scr5.length}
+  .screen5-5.infrastructure.loading
+    .screen5-5__container
+      .screen5-5-loader(data-text="Генплан завантажується, будь ласка зачекайте")
+        .loader1
+        .screen5-5-mobile-loader-percentage
+      .genplan-titles-faq
+        .genplan-titles-faq__item
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="14" fill="#23242B"/>
+            <path d="M13.68 10.586L13.918 9.116H15.556L15.318 10.586H13.68ZM12.448 19L13.526 12.168H14.94L13.862 19H12.448Z" fill="white"/>
+            </svg>
+        each val in genplanFaq
+          .genplan-titles-faq__item 
+            .genplan-titles-faq__circle(style="background:"+val[0]) 
+            .genplan-titles-faq__text #{val[1]}
+      .screen5-5__left
+        .genplan-legend
+          each val, index in genplanMapPoints
+            .genplan-legend-item-line
+            .genplan-legend-item
+              .genplan-legend-item__circle 0#{index+1}
+              .genplan-legend-item__text 
+                div #{val[0]}
+                div #{val[1]}
+          //- .genplan-legend-item-line
+          //- .genplan-legend-item
+          //-   .genplan-legend-item__circle 02
+          //-   .genplan-legend-item__text 
+          //-     div комфорт
+          //-     div Дитячий садок, школа, майданчики
+          //- .genplan-legend-item-line
+          //- .genplan-legend-item
+          //-   .genplan-legend-item__circle 03
+          //-   .genplan-legend-item__text 
+          //-     div бізнес
+          //-     div Комерційні приіщення
+          //- .genplan-legend-item-line
+          //- .genplan-legend-item
+          //-   .genplan-legend-item__circle 04
+          //-   .genplan-legend-item__text 
+          //-     div рекреація
+          //-     div Майданчики для відпочинку
+          .genplan-legend-item-line
+      img.screen5-5__right(src="#" alt="genplan" data-screen5-image)
+  .screen5-5-mobile.loading
+    .screen5-5-mobile-loader
+      .loader1
+      .screen5-5-mobile-loader-percentage
+    .screen5-5-mobile__top
+      img(src="egeg" alt='efef' data-mobile-infrastructure-canvas)
+    .screen5-5-mobile__bottom
+      .screen5-5-mobile__scroller
+        input#scroller(type="range", name="scroller")
+        svg(xmlns='http://www.w3.org/2000/svg' width='328' height='60' fill='none' viewBox='0 0 328 60')
+          g.Swipe.button
+            g.swipe
+              circle.Ellipse7(cx='30' cy='30' r='30' fill='#23242B')
+              g.swipe1
+                g.Group
+                  g.Group
+                    path.Vector(fill='#fff' d='M40.672 18.734h-7.115a.593.593 0 0 0 0 1.186h7.115a.593.593 0 0 0 0-1.186Z')
+                g.Group
+                  g.Group
+                    path.Vector(fill='#fff' d='m41.092 18.909-2.371-2.372a.593.593 0 0 0-.839.839l1.952 1.951-1.953 1.953a.593.593 0 0 0 .84.839l2.371-2.372a.593.593 0 0 0 0-.838Z')
+                g.Group
+                  g.Group
+                    path.Vector(fill='#fff' d='M25.257 18.734h-7.115a.593.593 0 0 0 0 1.186h7.115a.593.593 0 0 0 0-1.186Z')
+                g.Group
+                  g.Group
+                    path.Vector(fill='#fff' d='m18.98 19.327 1.952-1.951a.593.593 0 0 0-.838-.839l-2.372 2.372a.593.593 0 0 0 0 .838l2.372 2.372a.596.596 0 0 0 .838-.001.593.593 0 0 0 0-.839l-1.952-1.952Z')
+                g.Group
+                  g.Group
+                    path.Vector(fill='#fff' d='M40.08 28.22c-.488 0-.942.149-1.319.401a2.377 2.377 0 0 0-2.239-1.586c-.487 0-.941.148-1.319.4a2.377 2.377 0 0 0-2.238-1.586 2.35 2.35 0 0 0-1.186.319v-3.876a2.374 2.374 0 0 0-2.372-2.372 2.374 2.374 0 0 0-2.371 2.372V32.37l-2.061-1.545a3.109 3.109 0 0 0-4.043.287 1.78 1.78 0 0 0 0 2.515l8.445 8.445a5.304 5.304 0 0 0 3.774 1.563h2.778a6.53 6.53 0 0 0 6.522-6.522v-6.522a2.374 2.374 0 0 0-2.371-2.371Zm1.186 8.894a5.343 5.343 0 0 1-5.337 5.336h-2.778a4.124 4.124 0 0 1-2.936-1.215l-8.444-8.446a.593.593 0 0 1 0-.838 1.913 1.913 0 0 1 1.352-.555c.4 0 .804.125 1.142.378l3.008 2.257a.595.595 0 0 0 .949-.474V22.292a1.187 1.187 0 0 1 2.371 0v8.893a.593.593 0 0 0 1.186 0v-2.964a1.187 1.187 0 0 1 2.372 0v2.964a.593.593 0 0 0 1.185 0v-1.779a1.187 1.187 0 0 1 2.372 0v1.78a.593.593 0 0 0 1.186 0v-.594a1.187 1.187 0 0 1 2.372 0v6.522Z')
+            path.Rectangle4074(stroke='#23242B' stroke-dasharray='1 10' stroke-width='.5' d='M60.25 29.75h207.5v.5H60.25z')
+            circle.Ellipse83(cx='298' cy='30' r='29.5' stroke='#23242B' stroke-dasharray='1 10')
+      .genplan-titles-faq
+        .genplan-titles-faq__item(data-mobile-open-legend-faq)
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_852_8343)">
+            <path d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="#23242B"/>
+            g.open <path d="M13.6802 10.5862L13.9182 9.11621H15.5562L15.3182 10.5862H13.6802ZM12.4482 19.0002L13.5262 12.1682H14.9402L13.8622 19.0002H12.4482Z" fill="white"/>
+            g.close
+              | <path d="M9.3335 9.33301L17.6668 17.6663" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              | <path d="M17.6665 9.33301L9.33317 17.6663" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_852_8343">
+            <rect width="28" height="28" fill="white"/>
+            </clipPath>
+            </defs>
+          </svg>
+        each val in genplanFaq
+          .genplan-titles-faq__item 
+            .genplan-titles-faq__circle(style="background:"+val[0]) 
+            .genplan-titles-faq__text #{val[1]}
+      .screen5-5-mobile-swiper
+        .swiper-wrapper
+          each val, index in genplanMapPoints
+            .swiper-slide.mob-infra-item
+              .mob-infra-item__top
+                .mob-infra-item__circle #{index+1}
+                .mob-infra-item__circle-line
+              .mob-infra-item__title #{val[0]}
+              .mob-infra-item__desc #{val[1]}
+          //- .swiper-slide.mob-infra-item
+          //-   .mob-infra-item__top
+          //-     .mob-infra-item__circle 02
+          //-     .mob-infra-item__circle-line
+          //-   .mob-infra-item__title рекреація
+          //-   .mob-infra-item__desc Майданчики для відпочинку
+          //- .swiper-slide.mob-infra-item
+          //-   .mob-infra-item__top
+          //-     .mob-infra-item__circle 03
+          //-     .mob-infra-item__circle-line
+          //-   .mob-infra-item__title комфорт
+          //-   .mob-infra-item__desc Дитячий садок, школа, майданчики
+          //- .swiper-slide.mob-infra-item
+          //-   .mob-infra-item__top
+          //-     .mob-infra-item__circle 04
+          //-     .mob-infra-item__circle-line
+          //-   .mob-infra-item__title бізнес
+          //-   .mob-infra-item__desc Комерційні приіщення
+  //- .screen6().genplan
+  //-   //- .genplan-curtain-for-prev-block-anim
+  //-   .genplan__inner
+  //-     .genplan__inner-progress-bar
+  //-     <div class="lds-ring">
+  //-       <span></span>
+  //-       <div></div>
+  //-       <div></div>
+  //-       <div></div>
+  //-       <div></div>
+  //-     </div>
+  //-     .genplan__text
+  //-       .title-h2.text-black(data-genplan-title) Продумані маршрути
+  //-       .genplan__text-block-wrapper
+  //-         .genplan__text1
+  //-           p Forest Home запустив віртуальні шоуруми найпопулярніших планувань у будинку, щоб при виборі помешкання ви могли побачити розташування кімнат і навіть оцінити вид з вікон.  віртуальні шоуруми найпопулярніших планувань у будинку, щоб при виборі помешкання.
+  //-           a(class="button button--dark with-hover") 
+  //-             .button__hover
+  //-             span Хід будівництва
+  //-         ul.genplan__text2.genplan__list
+  //-           each val in genplanList
+  //-             li(data-attr=val.attr data-title=val.headTitle class="genplan-point")
+  //-               div.genplan-point__icon !{val.icon}
+  //-               div.genplan-point__text(title=val.text) #{val.text}
+  //-     .genplan__img
+  //-       picture
+  //-         //- source(srcset='./assets/images/screen6/genplan-tablet.jpg' media="(max-width: 992px)")
+  //-         img(src='./assets/images/screen6/genplan.jpg' alt="MDN" data-screen1-paralax)
+  .screen7
+    .section-decor
+      +svg('logo-mini')
+    .title-h2.text-beige галерея
+    .screen7__content
+      .screen7__faded-title
+          .screen7-title.text-beige Пориньте у атмосферу житлового комплексу
+          a.button.with-hover(href="#") 
+            .button__hover 
+            span Дивитися галерею
+      .screen7__left-block
+        img(src="./assets/images/screen7/Rectangle 3718.jpg")
+        img(src="./assets/images/screen7/Rectangle 3719.jpg")
+      .screen7__head-block
+        .screen7__head-block-text
+        img(src="./assets/images/screen7/Rectangle 3717.jpg").screen7__head-image
+      .screen7__right-block
+        img(src="./assets/images/screen7/199325606.jpg")
+        img(src="./assets/images/screen7/Rectangle 3720.jpg")
+        img(src="./assets/images/screen7/156099814.jpg")
+  .screen8 
+    //- 216397374.jpg
+    //- 277900885.jpg
+    //- 469189703.jpg
+    .section-decor
+      +svg('logo-mini')
+    img(data-src="./assets/images/screen8/clouds.png").screen8__clouds
+    .img-left
+      img(src="./assets/images/screen8/216397374.jpg")
+      img(src="./assets/images/screen8/logo-gradient-style.png").img-left__decor
+    .img-center
+      img(src="./assets/images/screen8/277900885.jpg")
+    .img-right
+      img(src="./assets/images/screen8/469189703.jpg")
+      img(src="./assets/images/screen8/logo-gradient-style.png").img-right__decor
+    .screen8__text 
+      .title.text-beige.fw-300 Обрати квартиру
+      p.text-white Група «Еталон» з гордістю представляє масштабний проект у центрі Вінниці. Це місто в місті, яке не підлаштовується під старі рамки, а задає нову планку та стандарт житлового району.
+      a.button.button--dark.with-hover(href="#") 
+        +svg('key')
+        .button__hover
+        span обрати квартиру
+    .screen8__render
+      img(data-screen8-src="./assets/images/screen8/render.png")
+  include home/screen9.pug
+  include home/screen10.pug
+  include home/screen11.pug
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

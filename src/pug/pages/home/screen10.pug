@@ -1,0 +1,24 @@
+
+.screen10
+  .section-decor
+    +svg('logo-mini')
+  .screen10__text
+    .title-h2.text-black Новини
+    p Останні новини у житловому комплексі Central Park
+    a.button.button--dark.with-hover(href="#") 
+      .button__hover
+      span Більше новин
+  .screen10__slider
+    - 
+      var slides = [  
+        { date: '01.12.2021', img: './assets/images/screen10/Rectangle 3974.jpg', text: 'Старт продажу!',}  ,
+        { date: '02.12.2021', img: './assets/images/screen10/Rectangle 3975.jpg', text: 'Відділ продажу відкрито за адресою: м.Вінниця, просп. Космонавтів, 49 (Другий поверх ТРЦ Premier Tower)',}  ,
+        { date: '03.12.2021', img: './assets/images/screen10/Rectangle 3976.jpg', text: 'З Гордістю представляємо масштабний проєкт житлового комплексу у центрі Вінниці!',},
+        ];
+    each val in slides
+      a(href="#").screen10-slide 
+        .text-white #{val.date}
+        img(src=val.img)
+        .curtain
+        .text-white #{val.text}
+    

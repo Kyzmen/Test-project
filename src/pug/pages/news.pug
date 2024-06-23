@@ -1,0 +1,68 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'новини / Акції'
+    var id_page = 'id-page-news'
+    var class_page = 'class-page-news'
+    var breadcrumbsSubitem = [
+    ]
+    var cardsData = [
+      { 
+        title: 'Група «Еталон» з гордістю представляє масштабний проект у центрі Вінниці',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» з гордістю представляє',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» з гордістю представляє масштабний Вінниці',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» з гордістю представляє масштабний у центрі Вінниці',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» з гордістю представляє масштабний проект у центрі Вінниці',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» з гордістю представляє масштабний',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» з гордістю представляє масштабний проект у центрі Вінниці',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» з гордістю',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» проект у центрі Вінниці',
+        subtitle: '01.12.2021'},
+      { 
+        title: 'Група «Еталон» з гордістю представляє масштабний',
+        subtitle: '01.12.2021'},
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/index-app.bundle.js')
+  script(defer src='./assets/scripts/news.bundle.js')
+block content
+  +InnerPageFront(title_page, 'some', './assets/images/gallery/front.jpg')
+  .news
+    each val in cardsData
+      a(href="single-news.html").news-card
+        .news-card__img
+          img(src="./assets/images/test-news.jpg")
+        .news-card__title #{val.title}
+        .news-card__subtitle #{val.subtitle}
+    button.button.with-hover 
+      .button__hover
+      span Показати більше
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

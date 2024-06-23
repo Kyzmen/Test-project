@@ -1,0 +1,9 @@
+# Ignore artifacts:
+prod
+dist
+node_modules
+src/assets/scripts/gulp-modules/ts
+src/assets/scripts/libs
+
+src/assets/scripts/libs/libs.js
+src/assets/scripts/gulp-modules/libs.js

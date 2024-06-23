@@ -1,0 +1,195 @@
+.single-news {
+    .inner-front__title {
+        font-size: 72px;
+        @include to(1680px){
+            font-size: 52px;
+        }
+        @include to(1024px){
+            
+            font-size: 36px;
+        }
+        @include to(575px){
+            font-size: 24px;
+            line-height: 120%;
+        }
+    }
+}
+.similar-news {
+    .inner-front__title {
+        margin-bottom: 100px;
+        width: 100%;
+        @include to(1024px){
+            margin-bottom: 50px;
+
+        }
+        @include to(575px){
+            margin-bottom: 40px;
+        }
+    }
+}
+
+
+.single-news-container {
+    background-color: var(--color-black);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    &__content {
+        position: relative;
+    }
+    @include row-flex();
+    @include to(575px){
+        padding-top: 40px;
+    }
+    &>img, &>iframe, &>video {
+        margin-top: 70px;
+        margin-bottom: 70px;
+        @include shift(2);
+        @include size(20);
+        @include from(1680px){
+            max-width: 1680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &[style] {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    
+    p, ul {
+        font-size: 18px;
+        line-height: 160%;
+        /* or 29px */
+        color: #A49B93;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        // @include size(12);
+        @include shift(6);
+        @include to(1680px){
+            font-size: 14px;
+        }
+        @include to(1024px){
+            @include shift(4);
+        }
+        @include to(575px){
+            @include shift(0);
+        }
+        
+    }
+    li {
+        padding-left: 30px;
+        margin-bottom: 20px;
+        position: relative;
+        &:before {
+            content: '/';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    a:not(.single-news-container__back-button), button {
+        @include shift-left(6);
+        @include to(1024px){
+            @include shift-left(4);
+        }
+        @include to(575px){
+            @include shift-left(0);
+        }
+
+    }
+    h2,h3,h4,h5, h6 {
+        font-size: 30px;
+        line-height: 140%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        /* or 42px */
+        /* Светлый */
+        color: var(--color-beige);
+        // @include size(12);
+        @include shift(6);
+        @include to(1680px){
+            font-size: 24px;
+        }
+        @include to(1024px){
+            @include shift(4);
+            font-size: 18px;
+        }
+        @include to(575px){
+            font-size: 18px;
+
+            @include shift(0);
+        }
+
+    }
+    &__slider-wrapper {
+        @include from(576px){
+            @include shift-padding(5);
+        }
+        position: relative;
+        user-select: none;
+    }
+    &__slider {
+        overflow: hidden;
+        cursor: grab;
+    }
+    &__slider-nav {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+        @include to(575px){
+            padding: 0 var(--page-side-fields);
+        }
+        svg:not(.visible) {
+            display: none;
+        }
+        
+    }
+    &__slider-nav svg {
+        @include to(575px){
+            width: 44px;
+            height: 44px;
+        }
+    }
+
+    [data-circle-with-hover] {
+        @include from-to(576px, 1024px){
+            width: 44px;
+            height: 44px;
+        }
+    }
+    [data-circle-with-hover-default] {
+        fill: transparent;
+        @include to(575px){
+            stroke: none;
+            fill: var(--color-black);
+        }
+    }
+    &__back-button  {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include to(1024px){
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 20px;
+            svg {
+                margin-right: 0;
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+
+}

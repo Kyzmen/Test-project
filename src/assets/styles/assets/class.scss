@@ -1,0 +1,48 @@
+// Global class
+// .wow:not(#some){
+// 	opacity: 0;
+// }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.js-input-focus:not(#some) {
+  .main-form__text{
+    transform: translateY(-110%);
+  }
+}
+.js-no-valid:not(#some)+.main-form-content {
+    svg{
+      fill: red;
+    }
+}
+.js-no-valid:not(#some){
+  border-bottom: 1px solid red;
+}
+
+.overflow--hidden:not(#some){
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.color--wc{
+  color: $wc;
+}
+.color--bc{
+  color: $bc;
+}
+.color--mc{
+  color: $mc;
+}
+
+.fill--mc svg {
+	fill: $mc;
+}
+

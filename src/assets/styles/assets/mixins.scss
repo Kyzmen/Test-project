@@ -1,0 +1,89 @@
+@mixin font-face($font-family, $url, $weight: normal, $style: normal, $asset-pipeline: false) {
+	@font-face {
+		font-family: '#{$font-family}';
+		font-weight: #{$weight};
+		font-style: '#{$style}';
+
+		src: url('#{$url}.eot');
+		src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
+		url('#{$url}.woff') format('woff'),
+		url('#{$url}.ttf') format('truetype');
+
+	}
+}
+
+// Function for converting a px based font-size to rem.
+@function rem($size) {
+	$remSize: $size / 14px;
+	@return #{$remSize}rem;
+}
+
+@mixin toh($max_height) {
+	@media screen and (max-height: $max_height) {
+		@content;
+	}
+}
+
+
+@function max($numbers...) {
+
+	@return m#{a}x(#{$numbers})
+}
+
+;
+
+@function min($numbers...) {
+
+	@return m#{i}n(#{$numbers})
+}
+
+;
+
+
+$full-width: 1200;
+$work-width: 80;
+$screen-height: 720;
+
+@function vmax($pixels, $context: $full-width) {
+	@return #{($pixels/$context)* 100}vmax
+}
+;
+
+@function vw($pixels, $context: $full-width) {
+	@return  #{($pixels/$context)* 100}vw
+}
+
+@function lh($lh, $fz) {
+	@return #{($lh/$fz)}em
+}
+
+
+@mixin customOffsetWidth($value, $offset) {
+	width: calc(#{$value}% - #{$offset});
+	margin-left: calc(#{$offset} / 2);
+	margin-right: calc(#{$offset} / 2);
+}
+@mixin autoAlpha($value) {
+	@if $value == 0 {
+		visibility: hidden;
+		opacity: 0;
+	} @else {
+		visibility: visible;
+		opacity: $value;
+	}
+}
+
+@mixin multiFontSize($lineHeight, $fullHd, $desktop, $tablet, $mobile) {
+	font-size: #{$fullHd}px;
+	line-height: $lineHeight;
+	@media screen and (max-width:1680px){
+		font-size: #{$desktop}px;
+	}
+	@media screen and (max-width:1024px){
+		font-size: #{$tablet}px;
+		
+	}
+	@media screen and (max-width:575px){
+		font-size: #{$mobile}px;
+	}
+}

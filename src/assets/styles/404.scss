@@ -1,0 +1,104 @@
+.page404-wrap {
+    min-height: 100vh;
+    // background-image: url(../images/screen9/mini.jpg);
+    // background-color: rgba(193, 136, 128, 0.25);
+    // background: linear-gradient(90deg, rgba(193,136,128,0.6) 36%, rgba(193,136,128,0.6) 57%),  url(../images/screen9/mini.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    background-color: var(--color-black);
+    .top-decor {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 65vw;
+        transform: translateX(-50%);
+        height: auto;
+    }
+    .bottom-decor {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+}
+.page404 {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 250px;
+    text-align: center;
+    @include from-to(576px, 1024px){
+        padding-top: 350px;
+    }
+    @include to(575px){
+        padding-top: 125px;
+    }
+    &__title-small,
+    &__subtitle {
+        color: var(--color-beige);
+    }
+    &__title {
+        width: 100%;
+        // font-family: $default-font2;
+        font-size: 12vw;
+        line-height: 100%;
+        margin-bottom: 30px;
+        color: var(--color-white);
+        width: 100%;
+        @include to(1024px){
+            font-size: 160px;
+        }
+        @include to(575px){
+            font-size: 96px;
+        }
+    }
+    &__subtitle {
+        font-size: 24px;
+        line-height: 140%;
+        margin-bottom: 0.6em;
+        width: 100%;
+    }
+    &__title-small {
+        font-size: 14px;
+        line-height: 140%;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .button {
+        @include customOffsetWidth(50, var(--offset));
+        max-width: 200px;
+        justify-content: center;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        /* Black */
+        color: #23242B;
+        width: 200px;
+        @include to(575px){
+            margin-bottom: 10px;
+        }
+    }
+    .link-wrap {
+        display: flex;
+        // width: 50%;
+        --offset: 25px;
+        margin-left: calc(var(--offset) * -0.5);
+        margin-right: calc(var(--offset) * -0.5);
+        justify-content: center;
+        @include to(575px){
+            width: 80%;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

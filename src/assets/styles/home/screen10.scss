@@ -1,0 +1,123 @@
+.screen10 {
+  padding: 200px var(--page-side-fields);
+  position: relative;
+  @include row-flex();
+  @include from(1025px) {
+    background-color: var(--color-white);
+    &__text > :nth-last-child(n + 2) {
+      margin-bottom: 30px;
+    }
+  }
+  @include to(575px) {
+    padding: 100px var(--page-side-fields);
+  }
+  &__text {
+    @include size(4);
+    @include shift(1);
+    @include size-md(24);
+    @include shift-md(0);
+    @include to(992px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      margin-bottom: 50px;
+      p {
+        width: 160px;
+      }
+    }
+    @include to(1024px) {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      p {
+        margin-bottom: 20px;
+        width: 210px;
+      }
+    }
+  }
+  .title-h2 {
+    @include to(1024px) {
+      margin-bottom: 20px;
+    }
+  }
+  &__slider {
+    @include size(18);
+    @include size-md(24);
+    @include shift(0);
+    display: flex;
+    @include to(575px) {
+      // flex-wrap: wrap;
+    }
+  }
+  .screen10-slide {
+    width: 33.3%;
+    flex-shrink: 0;
+    transition: width 0.5s ease-in-out;
+    @include to(1024px) {
+      width: 100%;
+      flex-shrink: 0;
+    }
+  }
+  @include from(1025px) {
+    .screen10__slider:hover .screen10-slide {
+      width: 30%;
+    }
+    .screen10__slider .screen10-slide:hover {
+      width: 40%;
+    }
+    .screen10-slide:hover .curtain {
+      opacity: 0;
+    }
+    .screen10-slide:hover img {
+      // filter: saturate(1);
+    }
+  }
+  .screen10-slide ~ .screen10-slide {
+    @include to(1024px) {
+      // margin-top: 20px;
+    }
+  }
+}
+.screen10-slide {
+  position: relative;
+  height: 62.5vh;
+  --padding: 40px;
+  padding-left: var(--padding);
+  padding-top: var(--padding);
+  padding-bottom: calc(var(--padding) * 1);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  .curtain,
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    // filter: saturate(0);
+    transition: 0.3s ease-in-out;
+  }
+  .curtain {
+    background: linear-gradient(180deg, rgba(35, 36, 43, 0) 0%, #23242b 100%);
+    background: linear-gradient(180deg, rgba(35, 36, 43, 0.438) 0%, rgba(35, 36, 43, 0.438) 100%);
+  }
+  .text-white {
+    width: 350px;
+    height: calc(1.4em * 3);
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include to(1680px) {
+      width: 240px;
+    }
+  }
+  .text-white:last-child {
+    margin-top: auto;
+  }
+}

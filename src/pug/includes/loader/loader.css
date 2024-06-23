@@ -1,0 +1,115 @@
+.loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    /* height: 100vh; */
+    /* background-color: #fff; */
+    z-index: 1000;
+    padding-left: var(--page-side-fields);
+    padding-top: 15px;
+    display: flex;
+    align-items: flex-end;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: .35s cubic-bezier(0.62, 0.01, 0.27, 0.96);
+    height: 100%;
+    min-height: -webkit-fill-available;
+}
+.loader-curtain {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: opacity .45s ease-in-out;
+    z-index: -1;
+}
+.loader.hidden .loader-curtain {
+    opacity: 0;
+}
+.loader.hidden {
+    /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
+    /* background-color: rgba(255,255,255,0); */
+    pointer-events: none;
+}
+.loader__lines { 
+    /* height: calc(100vh - 15px); */
+    /* width:calc((100vh - 15px) * 0.05); */
+    width: 32px;
+    /* transition: .9s ease-in-out; */
+    /* width: 20px;
+    height: auto; */
+    position: absolute;
+    left: 75px;
+    top: 50px;
+}
+.loader__lines path {
+    transition: opacity .5s ease-in-out;
+}
+@media (max-width: 1680px) {
+    .loader__lines {
+        left: 50px;
+        width: 28px;
+        top: 40px;
+    }
+}
+@media (max-width: 1920px) {
+    .loader__lines {
+        width: 28px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .loader__lines {
+        left: 30px;
+        width: 24px;
+        top: 15px;
+    }
+}
+@media (max-width: 576px) {
+    .loader__lines {
+        left: 20px;
+        width: 16.7px;
+        top: 15px;
+    }
+}
+.loader__lines.transformed {
+    transform: translateY(-20%);
+}
+.loader__lines path {
+    transform-origin: top;
+    transform-box: fill-box;
+    /* fill: #E5CDB7; */
+    transition: fill .75s ease-in-out;
+    /* transform: scaleY(0); */
+}
+.loader__lines .static {
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+.loader__lines.gradient .static{
+    /* fill: #E5CDB7 !important; */
+    opacity: 1;
+
+}
+
+.loader__counter {
+    padding-bottom: 50px;
+    font-size: 100px;
+    line-height: 90%;
+    /* identical to box height, or 90px */
+    letter-spacing: -0.03em;
+    /* Black */
+    color: #23242B;
+    padding-left: 40px;
+    transition: .5s ease-in-out;
+}
+
+.loader.hidden .loader__counter {
+    transform: translateY(100%);
+    opacity: 0;
+}
+.loader__counter:after {
+    content: '%';
+}

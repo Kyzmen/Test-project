@@ -1,0 +1,68 @@
+mixin testCard(link, src, title, descr)
+	a(href=link).card-item
+		img.card-item__img(src=src alt='foto-1' title="title-foto")
+		h2.card-item__title=title
+		p.card-item__descr=descr
+
+mixin icon(icon, condition)
+	if(condition)
+		svg(class= icon  role="presentation")&attributes(attributes)
+			use(xlink:href="#"+ icon + "")
+	else
+		span(class='svg-wrap')&attributes(attributes)
+			svg(class="svg-icon icon--"+ icon + ""  role="presentation")
+				use(xlink:href="#"+ icon + "")
+mixin svg(icon)
+		svg(class="icon--"+ icon + ""  role="presentation")&attributes(attributes)
+			use(xlink:href="#icon-"+ icon + "")
+
+mixin link-blank(href)
+	a(herf=href rel="nofollow" target="_blank")
+mixin img(src)
+	img(src='./assets/images/'+src+'' title="foto" alt="foto")&attributes(attributes)
+
+mixin btn(text)
+	img(type="button" class="button button-reset--default-styles")&attributes(attributes)
+
+mixin SelectBox(name, id, options)
+	.u-select-box
+		.u-select-box__current(tabindex="1")
+			each option, index in options
+				.u-select-box__value
+					if(index == 0)
+						input.u-select-box__input(class='js_'+1+'checkbox js_select_checkbox' type="radio" id=id+index value=option.value name=id checked)
+					else
+						input.u-select-box__input(class='js_'+id+'checkbox js_select_checkbox' type="radio" id=id+index value=option.value name=id)
+					p.u-select-box__input-text #{option.name}
+				+svg('select-arr').u-select-box__icon
+		ul.u-select-box__list
+			each option, index in options
+				li
+					label.u-select-box__option(for=id+index aria-hidden) #{option.name}
+
+mixin RangeSlider(options)
+	each option, index in options
+		li.range-item.filter__item.js-range-item
+			h4.range-item__label.filter__label #{option.label}
+			input.js-range-init(id=option.id type="hidden" data-from=option.from data-min=option.min data-to=option.to data-max=option.max)
+			.u-range-item-nav
+				input(id=option.id+"_min" class="js_"+option.id+"_min js-current-min" name=option.id+"_min" maxlength=option.max type="number" min=option.min value=option.min max=option.max)
+				input(id=option.id+"_max" class="js_"+option.id+"_max js-current-max" name=option.id+"_max" maxlength=option.max type="number" min=option.min value=option.max max=option.max)
+
+mixin InnerPageFront(title, breadcrumbs, img, customClass)
+	.inner-front(class=customClass)
+		- 
+			var imageInLogoSrc = img;
+		include ../components/inner-front/image-in-logo.pug
+		h1.inner-front__title
+			div #{title}
+		include ./breadcrumbs.pug
+		include ../components/inner-front/bottom-decor-big.svg
+		<svg preserveAspectRatio="xMinYMin meet" class="inner-front__small-bottom-decor" width="31" height="60" viewBox="0 0 31 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6 5H0V55H6V5Z" fill="#E5CDB7"/>
+			<path d="M14 0H8V60H14V0Z" fill="#E5CDB7"/>
+			<path d="M23 0H16V60H23V0Z" fill="#E5CDB7"/>
+			<path d="M31 5H25V55H31V5Z" fill="#E5CDB7"/>
+		</svg>
+
+

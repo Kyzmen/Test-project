@@ -1,0 +1,327 @@
+.menu-curtain {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 61;
+    pointer-events: none;
+    svg {
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    path {
+        fill: var(--color-black);
+    }
+
+}
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: var(--color-black);
+    z-index: 60;
+    @include autoAlpha(0);
+    --v-padding: 50px;
+    @include to(575px){
+        --v-padding: 14px;
+    }
+    &.opened &__top {
+        pointer-events: none;
+        &>* {
+            pointer-events: all;
+        }
+    }
+    &__top {
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: var(--v-padding) var(--page-side-fields);
+        position: relative;
+        z-index: 2;
+        @include to(575px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &>:nth-child(1) {
+            justify-self: left;
+        }
+        &>:nth-child(2) {
+            justify-self: center;
+            align-self: center;
+            @include to(575px){
+               display: none;
+            }
+        }
+        &>:nth-child(3) {
+            justify-self: right;
+        }
+    }
+    &__main {
+        // display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: auto;
+        height: 100%;
+        @include from(576px){
+            margin-top: -150px;
+            padding-top: 150px;
+        }
+        // @include to(1024px){
+        //     height: calc(100% - 160px);
+        // }
+        @include to(575px){
+            height: calc(100% - 50px);
+            padding-bottom: 85px;
+        }
+        &>:nth-child(n) {
+            margin-bottom: 50px;
+
+            @include to(575px){
+                margin-bottom: 25px;
+            }
+        }
+        a {
+                position: relative;
+            font-size: 100px;
+            line-height: 100%;
+            /* identical to box height, or 90px */
+            text-align: center;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--color-white);
+            font-weight: 300;
+            @include from(576px){
+                white-space: nowrap;
+            }
+            @include to(1680px) {
+                font-size: 64px;
+            }
+            @include to(1024px){
+                font-size: 36px;
+            }
+            @include to(575px){
+                font-size: 24px;
+            }
+        }
+        [data-menu-links] {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // height: 1em;
+
+            @include to(575px){
+                padding: 0 10%;
+            }
+        }
+    }
+    &__links-hover {
+        position: relative;
+        line-height: 100%;
+        
+        
+        @include from(1025px){
+            color: transparent;
+            &:after {
+                content: attr(data-text);
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                color: green;
+                transition: .3s ease-in-out;
+                transform: translateY(-100%);
+                color: var(--color-beige);
+                line-height: 110%;
+                opacity: 0;
+            }
+            &:before {
+                content: attr(data-text);
+                position: absolute;
+                color: var(--color-white);
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                line-height: 110%;
+                transition: .3s ease-in-out;
+            }
+            &:hover:before {
+                transform: translateY(110%);
+            }
+            &:hover:after {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @include to(575px){
+            line-height: 140%;
+        }
+    }
+    &__side-mobile {
+        position: absolute;
+        bottom: var(--v-padding);
+        left: var(--page-side-fields);
+        z-index: 5;
+        @include from(576px){
+            display: none;
+        }
+    }
+    &__side {
+        position: absolute;
+        bottom: var(--v-padding);
+        left: var(--page-side-fields);
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        .button {
+            @include to(1720px){
+                width: 230px;
+
+            }
+            text-align: center;
+            justify-content: center;
+        }
+        :nth-last-child(n+2) {
+            margin-bottom: 15px;
+            @include to(575px){
+                margin-bottom: 10px;
+            }
+        }
+        a {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1em;
+            /* identical to box height, or 24px */
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            /* Светлый */
+            color: var(--color-beige);
+            text-decoration: none;
+            display: flex;
+            @include from(1720px){
+                font-size: 26px;
+            }
+            @include to(575px){
+                font-size: 14px;
+            }
+        }
+        @include to(575px){
+            display: none;
+        }
+    }
+    &__close {
+        color: var(--color-beige);
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        span {
+            margin-right: 15px;
+            @include to(575px){
+                display: none;
+            }
+        }
+        @include to(575px){
+            svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    [data-circle-with-hover] path {
+        stroke: var(--color-black);
+        @include to(575px){
+            transform-origin: center;
+            transform-box: fill-box;
+            transform: scale(1.5);
+        }
+    }
+    @include from(1025px){
+        [data-circle-with-hover]:hover path {
+            stroke: var(--color-beige);
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.03em;
+        color: var(--color-beige);
+        text-transform: uppercase;
+    }
+    .menu-logo {
+        height: auto;
+    }
+    .tiles {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 150vh;
+        display: flex;
+        opacity: 0.5;
+        flex-direction: column;
+        justify-content: center;
+        transform: translate3d(-50%,-50%, 0) rotate(22.5deg);
+        z-index: -1;
+        @include to(575px){
+            height: 150%; 
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: linear-gradient(0deg, rgba(35, 36, 43, 0.55), rgba(35, 36, 43, 0.55));
+        }
+    }
+    
+    .tiles__line {
+        display: flex;
+        transform: translateX(25%);
+        animation: runner 22s linear infinite;
+        @include to(575px){
+            // animation: none;
+        }
+    }
+    
+    .tiles__line:nth-child(2) {
+        animation-duration: 26s;
+    }
+    
+    .tiles__line:nth-child(3) {
+        animation-duration: 30s;
+    }
+    .tiles__line-img {
+        --tile-margin: 3vw;
+        background-position: 50% 50%;
+        background-size: cover;
+        border-radius: 50%;
+        flex: none;
+        height: 30vh;
+        margin: var(--tile-margin);
+        width: 30vh;
+    }
+    .tiles__line-img--large {
+        border-radius: 20vh;
+        width: 100vh;
+    }
+    @keyframes runner {
+        to {
+            transform: translateX(-25%);
+        }
+    }
+}

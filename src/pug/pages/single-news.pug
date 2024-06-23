@@ -1,0 +1,78 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Група «Еталон» з гордістю представляє масштабний проект у центрі Вінниці'
+    var id_page = 'id-page-single-news'
+    var class_page = 'class-page-single-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Новини',
+        link: 'news.html'
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/index-app.bundle.js')
+  script(defer src='./assets/scripts/single-news.bundle.js')
+block content
+    +InnerPageFront(title_page, 'some', './assets/images/gallery/front.jpg', 'single-news')
+    .single-news-container
+      .single-news-container__content
+        a(href="news").button.button--bordered.button--dark.with-hover.single-news-container__back-button 
+          .button__hover 
+          <svg width="25" height="17" viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.87462 16C6.49847 14.0102 1.2844 8.5 8.84937e-07 8.5M8.84937e-07 8.5C1.29969 8.5 6.34557 3.37245 7.87462 1M8.84937e-07 8.5L25 8.5" stroke="#E5CDB7"/>
+            </svg>
+          span Назад
+        h2 Яким буде Київ через 10 років? За версією нашої компанії, він буде найкомфортнішим містом у світі. Саме такий BHAG ми собі поставили та до якого впевнено рухаємося з кожним новим проєктом.
+        .single-news-container__slider-wrapper
+          .single-news-container__slider-nav
+            <svg data-circle-with-hover width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle data-circle-with-hover-default cx="30" cy="30" r="29.5" stroke="#E5CDB7"/>
+              <circle data-circle-with-hover-hover cx="30" cy="30" r="29.5" stroke="#E5CDB7"/>
+              <path d="M26.3922 24C25.3188 25.5918 21.2518 30 20.25 30M20.25 30C21.2638 30 25.1995 34.102 26.3922 36M20.25 30L39.75 30" stroke="#E5CDB7"/>
+              </svg>
+            <svg data-circle-with-hover width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle data-circle-with-hover-default cx="30" cy="30" r="29.5" stroke="#E5CDB7"/>
+              <circle data-circle-with-hover-hover cx="30" cy="30" r="29.5"  stroke="#E5CDB7"/>
+              <path d="M33.6078 24C34.6812 25.5918 38.7482 30 39.75 30M39.75 30C38.7362 30 34.8005 34.102 33.6078 36M39.75 30L20.25 30" stroke="#E5CDB7"/>
+              </svg>
+          .single-news-container__slider
+            .swiper-wrapper
+              img(src="./assets/images/test-news.jpg").swiper-slide 
+              img(src="./assets/images/test-news.jpg").swiper-slide 
+              img(src="./assets/images/test-news.jpg").swiper-slide 
+              img(src="./assets/images/test-news.jpg").swiper-slide 
+        p Про те, що вже зараз ми змінюємо обличчя Києва та створюємо проєкти майбутнього, говорить і редакція НВ. У новому номері вона разом з архітекторами, забудовниками та урбаністами склала рейтинг 10 знакових об’єктів столиці та включила до нього відразу два проєкти, які ми реалізуємо спільно з партнерами Perfect Group і Kyivproekt Development — Новий Поділ та KYЇVPROEKT City Space.
+        ul
+          li Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus molestias, temporibus quod voluptates illo tempore commodi eaque nobis corporis at debitis laboriosam consequuntur eligendi accusamus tenetur unde facere? Molestiae perferendis minus numquam laboriosam commodi dolorum!
+          li Lorem ipsum dolor sit amet.
+          li Lorem ipsum dolor sit amet.
+          li Lorem ipsum dolor sit amet.
+          li Lorem ipsum dolor sit amet.
+        a(href="3d.html").button.with-hover 
+          .button__hover
+          span Обрати квартиру
+    .news.similar-news
+      .inner-front__title останні новини / Акції
+      a(href="single-news.html").news-card
+        .news-card__img
+          img(src="./assets/images/test-news.jpg")
+        .news-card__title Lorem ipsum dolor sit.
+        .news-card__subtitle 15.05.2022
+      a(href="single-news.html").news-card
+        .news-card__img
+          img(src="./assets/images/test-news.jpg")
+        .news-card__title Lorem ipsum dolor sit.
+        .news-card__subtitle 15.05.2022
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
